@@ -1,0 +1,11 @@
+body,
+html {
+  @extend .light-bg;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  @extend .container-x;
+  min-height: 50vh;
+}

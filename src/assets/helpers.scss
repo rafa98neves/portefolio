@@ -1,0 +1,38 @@
+// Colors
+
+.light-bg {
+  background-color: $color-2;
+  color: $color-1;
+}
+
+.medium-bg {
+  background-color: $color-1;
+  color: $color-4;
+}
+
+.medium-2-bg {
+  background-color: $color-3;
+  color: $color-1;
+}
+
+.dark-bg {
+  background-color: $color-4;
+  color: $color-1;
+}
+
+// Sizes
+
+.container-x {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.container-y {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.container {
+  @extend .container-x;
+  @extend .container-y;
+}

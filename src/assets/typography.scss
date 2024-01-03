@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
-  font-family: "Crimson Text", serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
@@ -9,6 +9,7 @@ h2,
 h3,
 h4,
 h5 {
+  font-family: "Crimson Text", serif;
   margin: 0;
   font-weight: 600;
 }
@@ -22,11 +23,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 h5 {
@@ -35,7 +36,9 @@ h5 {
 
 p,
 span,
-div {
+div,
+li,
+b {
   font-weight: 400;
   font-size: 1rem;
 }
@@ -43,8 +46,8 @@ div {
 a {
   color: $color-4;
   text-decoration: none;
+}
 
-  &.active {
-    color: $color-1;
-  }
+b {
+  font-weight: 700;
 }

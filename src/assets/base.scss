@@ -1,11 +1,19 @@
 body,
 html {
-  @extend .light-bg;
+  @extend .medium-bg;
   margin: 0;
   padding: 0;
 }
 
-section {
-  @extend .container-x;
-  min-height: 50vh;
+.padded-space {
+  height: 100%;
+  max-width: $max-page-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }

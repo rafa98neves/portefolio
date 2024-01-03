@@ -1,0 +1,39 @@
+input,
+textarea {
+  background-color: $color-1;
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 1px solid $color-3;
+  border-radius: 14px;
+
+  &:focus,
+  &:active {
+    outline: 1px solid $color-3;
+  }
+
+  &::placeholder {
+    color: $color-9;
+  }
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+button {
+  color: $color-1;
+  background-color: $color-4;
+  border: 1px solid $color-4;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  display: flex;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+
+  svg {
+    fill: $color-1;
+  }
+}

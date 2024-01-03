@@ -41,15 +41,15 @@ function setupWindowPos() {
     return;
   }
 
+  console.log(element);
   if (element && !isElInViewPort(element)) {
     element.scrollIntoView({ behavior: "smooth" });
   }
 }
 
 function isElInViewPort(el: HTMLElement) {
-  const { scrollTop } = document.documentElement;
   var { top, bottom } = el.getBoundingClientRect();
-  return top >= 0 && bottom >= 0 && bottom - top < scrollTop;
+  return (top >= 0 || bottom >= 0) && top < 100;
 }
 
 function handleScroll() {
@@ -59,15 +59,21 @@ function handleScroll() {
 
   if (sectionInViewport.length > 0) {
     router.replace({
-      name: sectionInViewport[0].routeName,
+      name: sectionInViewport[sectionInViewport.length - 1].routeName,
     });
   }
 }
 
-watch(routeName, setupWindowPos, { immediate: true });
+watch(
+  routeName,
+  () => {
+    setTimeout(setupWindowPos, 0);
+  },
+  { immediate: true }
+);
 
 onMounted(() => {
-  scrollDebouncer = debounce(handleScroll, 50);
+  scrollDebouncer = debounce(handleScroll, 40);
   window.addEventListener("scroll", scrollDebouncer);
 });
 
@@ -82,8 +88,8 @@ onUnmounted(() => {
 <template>
   <div class="v-Home">
     <GreetingSection ref="greetingSection" />
-    <ExpertiseSection ref="expertiseSection" />
-    <HistorySection ref="historySection" />
-    <ContactsSection ref="contactsSection" />
+    <ExpertiseSection class="py-10" ref="expertiseSection" />
+    <HistorySection class="py-10" ref="historySection" />
+    <ContactsSection class="py-10" ref="contactsSection" />
   </div>
 </template>

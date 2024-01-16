@@ -6,7 +6,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
 <template>
   <section>
     <div class="s-History padded-space">
-      <h3 class="text-center mb-10">My Career</h3>
+      <h3 class="text-center mb-10">My Accomplishments</h3>
       <HistoryCard
         class="my-10"
         image="unbabel.png"
@@ -83,7 +83,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
 
 <style lang="scss" scoped>
 section {
-  @extend .medium-bg;
+  @extend .light-bg;
   min-height: 20rem;
 
   :deep(a) {

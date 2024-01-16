@@ -17,9 +17,9 @@ const props = withDefaults(
 const style = computed(() => {
   let background;
   if (props.placement === "left") {
-    background = `linear-gradient(90deg, ${props.backgroundColor} 0%, ${props.backgroundColor} 25%, rgba(78, 205, 196, 1) 100%)`;
+    background = `linear-gradient(90deg, ${props.backgroundColor} 0%, ${props.backgroundColor} 25%, rgba(255, 255, 255, 0) 100%)`;
   } else {
-    background = `linear-gradient(90deg, rgba(78, 205, 196, 1) 0%, ${props.backgroundColor} 80%)`;
+    background = `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, ${props.backgroundColor} 80%)`;
   }
   return {
     color: props.color,
@@ -85,12 +85,12 @@ const commonBinds = computed(() => ({
   }
 
   &:not(.right) {
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
+    border-top-left-radius: 8rem;
+    border-bottom-left-radius: 8rem;
   }
   &.right {
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-top-right-radius: 8rem;
+    border-bottom-right-radius: 8rem;
     img {
       order: 2;
     }

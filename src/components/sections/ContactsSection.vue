@@ -49,21 +49,21 @@ function send() {
         </div>
         <div class="mb-4 ml-4">
           <div class="s-Contacts--contacts">
-            <EmailIcon class="mr-4" />
+            <EmailIcon class="icon mr-4" />
             <div>
               <b> Email </b>
               neves98rafael@gmail.com
             </div>
           </div>
           <div class="s-Contacts--contacts">
-            <PhoneIcon class="mr-4" />
+            <PhoneIcon class="icon mr-4" />
             <div>
               <b> Phonenumber </b>
               +351 969 884 851
             </div>
           </div>
           <div class="s-Contacts--contacts">
-            <HouseIcon class="mr-4" />
+            <HouseIcon class="icon mr-4" />
             <div>
               <b> Location </b>
               Coimbra, Portugal
@@ -102,6 +102,10 @@ section {
       * {
         display: inline-block;
         vertical-align: middle;
+      }
+      .icon {
+        width: 24px;
+        height: solid;
       }
     }
     &--formContainer {

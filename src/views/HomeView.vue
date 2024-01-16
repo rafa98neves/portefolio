@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GreetingSection from "@/components/sections/GreetingSection.vue";
+import AcademicSection from "@/components/sections/AcademicSection.vue";
 import ExpertiseSection from "@/components/sections/ExpertiseSection.vue";
 import HistorySection from "@/components/sections/HistorySection.vue";
 import ContactsSection from "@/components/sections/ContactsSection.vue";
@@ -15,6 +16,7 @@ const route = useRoute();
 const greetingSection = ref<InstanceType<typeof GreetingSection> | null>();
 const expertiseSection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const historySection = ref<InstanceType<typeof ExpertiseSection> | null>();
+const academicSection = ref<InstanceType<typeof AcademicSection> | null>();
 const contactsSection = ref<InstanceType<typeof ExpertiseSection> | null>();
 
 const sections = computed(() => [
@@ -32,6 +34,11 @@ const sections = computed(() => [
     ref: historySection,
     routeName: ROUTE_NAME.HISTORY,
     visible: useElementVisibility(historySection),
+  },
+  {
+    ref: academicSection,
+    routeName: ROUTE_NAME.ABOUT_ME,
+    visible: useElementVisibility(greetingSection),
   },
   {
     ref: contactsSection,
@@ -72,6 +79,7 @@ watch(
     <GreetingSection ref="greetingSection" />
     <ExpertiseSection ref="expertiseSection" class="py-10" />
     <HistorySection ref="historySection" class="py-10" />
+    <AcademicSection ref="academicSection" class="py-10" />
     <ContactsSection ref="contactsSection" class="py-10" />
   </div>
 </template>

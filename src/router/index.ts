@@ -4,6 +4,7 @@ export enum ROUTE_NAME {
   ABOUT_ME = "ABOUT_ME",
   MY_SKILLS = "MY_SKILLS",
   HISTORY = "HISTORY",
+  ACADEMIC = "ACADEMIC",
   CONTACTS = "CONTACTS",
 }
 
@@ -23,6 +24,11 @@ const router = createRouter({
     {
       path: "/history",
       name: ROUTE_NAME.HISTORY,
+      component: () => import("../views/HomeView.vue"),
+    },
+    {
+      path: "/academic",
+      name: ROUTE_NAME.ACADEMIC,
       component: () => import("../views/HomeView.vue"),
     },
     {

@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import { ROUTE_NAME } from "@/router";
-import { computed, reactive, watch } from "vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const state = reactive({
-  show: false,
-});
+import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
@@ -17,12 +9,10 @@ const props = withDefaults(
     placement?: "left" | "right";
   }>(),
   {
-    placement: "left",
+    placement: "right",
     color: "#fff",
   }
 );
-
-const routeName = computed(() => router.currentRoute.value.name);
 
 const style = computed(() => {
   let background;
@@ -37,41 +27,49 @@ const style = computed(() => {
   };
 });
 
-watch(
-  routeName,
-  () => {
-    if (routeName.value === ROUTE_NAME.HISTORY) {
-      state.show = true;
-    }
-  },
-  { immediate: true }
-);
+const commonBinds = computed(() => ({
+  class: [
+    "c-HistoryCard",
+    { right: props.placement === "right", left: props.placement !== "right" },
+  ],
+  delay: 200,
+  style: style.value,
+}));
 </script>
 
 <template>
-  <Transition appear>
+  <div class="c-HistoryCard--wrapper">
     <div
-      v-if="state.show"
-      class="c-HistoryCard"
-      :class="{ right: placement === 'right' }"
-      :style="style"
+      v-motion-slide-visible-left
+      v-if="placement === 'right'"
+      v-bind="commonBinds"
     >
       <img :src="image" />
       <div class="c-HistoryCard--text">
         <slot />
       </div>
     </div>
-  </Transition>
+
+    <div v-else v-motion-slide-visible-right v-bind="commonBinds">
+      <img :src="image" />
+      <div class="c-HistoryCard--text">
+        <slot />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .c-HistoryCard {
   display: flex;
-  border: 1px solid inherit;
   color: $color-1;
   align-items: center;
   justify-content: space-between;
   min-height: 19rem;
+
+  &--wrapper {
+    min-height: 10rem;
+  }
 
   img {
     width: 20%;

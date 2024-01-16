@@ -15,7 +15,7 @@ import SocialLinks from "../blocks/SocialLinks.vue";
           products
         </p>
       </div>
-      <div class="s-Greeting--image">
+      <div class="s-Greeting--image" v-motion-fade-visible :delay="100">
         <img src="/me-1.png" />
       </div>
       <SocialLinks />

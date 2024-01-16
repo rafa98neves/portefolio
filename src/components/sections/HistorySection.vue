@@ -34,7 +34,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
         class="my-10"
         image="grama.jpeg"
         background-color="rgba(0, 0, 0, 1)"
-        placement="right"
+        placement="left"
       >
         <div>
           <div class="mb-4">

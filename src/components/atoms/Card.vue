@@ -3,7 +3,7 @@ defineProps<{ title: string }>();
 </script>
 
 <template>
-  <div class="c-Card">
+  <div class="c-Card" v-motion-fade-visible :delay="100">
     <div class="c-Card--header">
       <h3>{{ title }}</h3>
       <hr />

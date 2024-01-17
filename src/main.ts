@@ -7,6 +7,7 @@ import router from "./router";
 import { MotionPlugin } from "@vueuse/motion";
 
 const app = createApp(App);
+
 app.use(MotionPlugin);
 
 app.use(router);

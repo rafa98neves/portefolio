@@ -15,7 +15,7 @@ import SocialLinks from "../blocks/SocialLinks.vue";
           products
         </p>
       </div>
-      <div class="s-Greeting--image" v-motion-fade-visible :delay="100">
+      <div class="s-Greeting--image" v-motion-fade-visible>
         <img src="/me-1.png" />
       </div>
       <SocialLinks />
@@ -26,6 +26,8 @@ import SocialLinks from "../blocks/SocialLinks.vue";
 
 <style lang="scss" scoped>
 section {
+  min-height: 38rem;
+  height: 38rem;
   @extend .medium-bg;
 }
 
@@ -33,9 +35,9 @@ section {
   display: flex;
   position: relative;
   align-items: center;
+  height: 100%;
   justify-content: space-between;
   padding-top: 1rem;
-  height: 80vh;
   &--image {
     margin-bottom: -2rem;
     margin-right: -1.5rem;

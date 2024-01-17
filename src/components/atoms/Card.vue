@@ -22,7 +22,7 @@ defineProps<{ title: string }>();
   border-radius: 1rem;
   background-color: $color-1;
   box-shadow: 0px 0px 5px 1px $color-2;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   h3 {
     text-align: center;
   }

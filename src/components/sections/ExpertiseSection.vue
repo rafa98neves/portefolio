@@ -17,7 +17,7 @@ import Card from "../atoms/Card.vue";
           <ul class="s-Expertise--list">
             <li>TypeScript</li>
             <li>JavaScript</li>
-            <li class="pt-4">Java</li>
+            <li>Java</li>
           </ul>
         </Card>
 
@@ -25,7 +25,7 @@ import Card from "../atoms/Card.vue";
           <ul class="s-Expertise--list">
             <li>Vue</li>
             <li>React</li>
-            <li class="pt-4">Spring</li>
+            <li>Spring</li>
             <li>Quarkus</li>
           </ul>
         </Card>
@@ -49,13 +49,20 @@ section {
   @extend .light-bg;
 }
 .s-Expertise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
+
+  &--description {
+    @extend .text-center;
+    max-width: 40rem;
+    margin: 3rem auto 5rem auto;
+  }
   &--cardContainer {
     display: flex;
     gap: 2rem;
-    align-items: stretch;
-    justify-content: stretch;
 
     * {
       flex-grow: 1;
@@ -65,12 +72,6 @@ section {
 
   &--list {
     @extend .text-center;
-  }
-
-  &--description {
-    @extend .text-center;
-    max-width: 40rem;
-    margin: 3rem auto 2rem auto;
   }
 }
 </style>

@@ -4,7 +4,7 @@ import AcademicSection from "@/components/sections/AcademicSection.vue";
 import ExpertiseSection from "@/components/sections/ExpertiseSection.vue";
 import HistorySection from "@/components/sections/HistorySection.vue";
 import ContactsSection from "@/components/sections/ContactsSection.vue";
-import { computed, ref, watch } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import { useElementVisibility } from "@vueuse/core";
 import { useRoute, useRouter } from "vue-router";
 import { ROUTE_NAME } from "@/router";
@@ -62,20 +62,30 @@ watch(
 );
 
 watch(
-  () => sections.value,
+  sections,
   () => {
-    let currentRoute = ROUTE_NAME.ABOUT_ME;
+    let currentRoute: ROUTE_NAME | null = null;
     sections.value.forEach((s) => {
       if (s.visible.value) currentRoute = s.routeName;
     });
-    router.replace({ name: currentRoute });
+    if (currentRoute) {
+      router.replace({ name: currentRoute });
+    }
   },
-  { immediate: true, deep: true }
+  { deep: true }
 );
+
+let key = ref(1);
+
+/**
+ * preventing v-motion not showing elements on render
+ * https://github.com/vueuse/motion/issues/143
+ */
+setTimeout(() => key.value++);
 </script>
 
 <template>
-  <div class="v-Home">
+  <div class="v-Home" :key="key">
     <GreetingSection ref="greetingSection" />
     <ExpertiseSection ref="expertiseSection" class="py-10" />
     <HistorySection ref="historySection" class="py-10" />

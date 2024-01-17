@@ -54,3 +54,25 @@ export const HISTORY_TEXT = {
     CHIPS: ["Vue 2", "TypeScript"],
   },
 };
+
+export const ACADEMIC_TEXT = {
+  MASTERS: {
+    HEADER: `MSc in Software Engineering`,
+    TEXT: [
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to ma`,
+    ],
+    CHIPS: [],
+  },
+  UNIVERSITY: {
+    HEADER: `Bachelor's in Informatics Engineering`,
+    TEXT: [
+      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make`,
+    ],
+    CHIPS: [],
+  },
+  MUSIC: {
+    HEADER: `Music enthusiast`,
+    TEXT: [`Co-founder of brass fusion & 8th grade music school`],
+    CHIPS: ["Vue 2", "TypeScript"],
+  },
+};

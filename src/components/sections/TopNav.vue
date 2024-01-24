@@ -39,6 +39,14 @@ function isActive(route: ROUTE_NAME) {
         </li>
         <li>
           <RouterLink
+            :class="{ active: isActive(ROUTE_NAME.ACADEMIC) }"
+            to="/academic"
+          >
+            Accomplishments
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
             :class="{ active: isActive(ROUTE_NAME.CONTACTS) }"
             to="/contacts"
           >
@@ -52,11 +60,8 @@ function isActive(route: ROUTE_NAME) {
 
 <style lang="scss" scoped>
 .s-TopNav {
-  @extend .medium-2-bg;
-  z-index: 2;
-  border-bottom: 1px solid $color-2;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  @extend .dark-bg;
+  z-index: 6;
   position: fixed;
   inset: 0;
   height: 4rem;
@@ -68,10 +73,12 @@ function isActive(route: ROUTE_NAME) {
     width: 100%;
     padding: 0;
     display: inline-grid;
-    grid-template-columns: 1fr min-content min-content min-content;
+    grid-template-columns: 1fr min-content min-content min-content min-content;
     align-items: center;
     li {
-      margin-right: 1.5rem;
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
       text-align: end;
 
       &.main {
@@ -85,7 +92,7 @@ function isActive(route: ROUTE_NAME) {
         color: $color-1;
         font-weight: 400;
         &.active {
-          color: $color-4;
+          color: $color-2;
           font-weight: 700;
         }
       }

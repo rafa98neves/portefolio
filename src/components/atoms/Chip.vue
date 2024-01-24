@@ -10,6 +10,7 @@ defineProps<{ label: string }>();
 
 <style lang="scss" scoped>
 .c-Chip {
+  z-index: 4;
   font-size: 12px;
   display: table-cell;
   white-space: nowrap;

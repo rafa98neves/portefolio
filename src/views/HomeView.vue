@@ -4,10 +4,14 @@ import AcademicSection from "@/components/sections/AcademicSection.vue";
 import ExpertiseSection from "@/components/sections/ExpertiseSection.vue";
 import HistorySection from "@/components/sections/HistorySection.vue";
 import ContactsSection from "@/components/sections/ContactsSection.vue";
-import { computed, reactive, ref, watch } from "vue";
+import ProjectsSection from "@/components/sections/ProjectsSection.vue";
+import { computed, onBeforeMount, onBeforeUnmount, ref, watch } from "vue";
 import { useElementVisibility } from "@vueuse/core";
 import { useRoute, useRouter } from "vue-router";
 import { ROUTE_NAME } from "@/router";
+import { debounce } from "lodash";
+
+let routeChangeDebounce: ReturnType<typeof debounce> | null = null;
 
 const router = useRouter();
 
@@ -18,6 +22,7 @@ const expertiseSection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const historySection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const academicSection = ref<InstanceType<typeof AcademicSection> | null>();
 const contactsSection = ref<InstanceType<typeof ExpertiseSection> | null>();
+const projectsSection = ref<InstanceType<typeof ProjectsSection> | null>();
 
 const sections = computed(() => [
   {
@@ -37,8 +42,13 @@ const sections = computed(() => [
   },
   {
     ref: academicSection,
-    routeName: ROUTE_NAME.ABOUT_ME,
-    visible: useElementVisibility(greetingSection),
+    routeName: ROUTE_NAME.ACADEMIC,
+    visible: useElementVisibility(academicSection),
+  },
+  {
+    ref: projectsSection,
+    routeName: ROUTE_NAME.PROJECTS,
+    visible: useElementVisibility(projectsSection),
   },
   {
     ref: contactsSection,
@@ -49,7 +59,7 @@ const sections = computed(() => [
 
 watch(
   () => route.name,
-  () => {
+  async () => {
     const section = sections.value.find((s) => s.routeName === route.name);
     if (section && !section.visible.value) {
       section.ref.value?.$el.scrollIntoView({
@@ -64,6 +74,13 @@ watch(
 watch(
   sections,
   () => {
+    if (routeChangeDebounce) routeChangeDebounce();
+  },
+  { deep: true }
+);
+
+onBeforeMount(() => {
+  routeChangeDebounce = debounce(() => {
     let currentRoute: ROUTE_NAME | null = null;
     sections.value.forEach((s) => {
       if (s.visible.value) currentRoute = s.routeName;
@@ -71,9 +88,10 @@ watch(
     if (currentRoute) {
       router.replace({ name: currentRoute });
     }
-  },
-  { deep: true }
-);
+  }, 200);
+});
+
+onBeforeUnmount(() => (routeChangeDebounce = null));
 
 let key = ref(1);
 
@@ -90,6 +108,7 @@ setTimeout(() => key.value++);
     <ExpertiseSection ref="expertiseSection" class="py-10" />
     <HistorySection ref="historySection" class="py-10" />
     <AcademicSection ref="academicSection" class="py-10" />
+    <ProjectsSection ref="projectsSection" class="py-10" />
     <ContactsSection ref="contactsSection" class="py-10" />
   </div>
 </template>

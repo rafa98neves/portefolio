@@ -1,125 +1,94 @@
 <script lang="ts" setup>
-import { computed, reactive } from "vue";
-import EmailIcon from "../icons/EmailIcon.vue";
-import PhoneIcon from "../icons/PhoneIcon.vue";
-import HouseIcon from "../icons/HouseIcon.vue";
-import ChevronIcon from "../icons/ChevronIcon.vue";
-
-const form = reactive({
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-});
-
-const formIsValid = computed(() => {
-  return Object.values(form).findIndex((v) => v.length === 0) === -1;
-});
-
-function send() {
-  if (!formIsValid.value) return;
+function goToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>
 
 <template>
   <section>
     <div class="s-Contacts padded-space">
-      <h3 class="text-center mb-10">Get in touch</h3>
-      <div class="s-Contacts--wrapper">
-        <div>
-          <form class="s-Contacts--formContainer" @submit="send">
-            <input class="half" placeholder="Name" v-model="form.name" />
-            <input
-              class="medium"
-              placeholder="Email"
-              type="email"
-              v-model="form.email"
-            />
-
-            <input
-              class="medium"
-              placeholder="Subject"
-              v-model="form.subject"
-            />
-            <textarea placeholder="Message" v-model="form.message" />
-            <button :disabled="!formIsValid" @click="send">
-              Send Message <ChevronIcon class="btn-icon" />
-            </button>
-          </form>
+      <div class="font-weight-bold text-center">
+        Are you ready to transform an incredible
+        <span class="font-weight-bold text-warning"> idea </span> <br />
+        into an awesome
+        <span class="font-weight-bold text-warning"> product</span>?
+      </div>
+      <div class="s-Contacts--contactsWrapper my-10">
+        <div class="contact">
+          <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
+          <div>
+            <b> Email </b>
+            neves98rafael@gmail.com
+          </div>
         </div>
-        <div class="mb-4 ml-4">
-          <div class="s-Contacts--contacts">
-            <EmailIcon class="icon mr-4" />
-            <div>
-              <b> Email </b>
-              neves98rafael@gmail.com
-            </div>
+        <div class="contact">
+          <font-awesome-icon :icon="['fas', 'phone']" class="icon" />
+          <div>
+            <b> Phonenumber </b>
+            +351 969 884 851
           </div>
-          <div class="s-Contacts--contacts">
-            <PhoneIcon class="icon mr-4" />
-            <div>
-              <b> Phonenumber </b>
-              +351 969 884 851
-            </div>
-          </div>
-          <div class="s-Contacts--contacts">
-            <HouseIcon class="icon mr-4" />
-            <div>
-              <b> Location </b>
-              Coimbra, Portugal
-            </div>
+        </div>
+        <div class="contact">
+          <font-awesome-icon :icon="['fas', 'house']" class="icon" />
+          <div>
+            <b> Location </b>
+            Coimbra, Portugal
           </div>
         </div>
       </div>
+      <button class="btn-warning" @click="goToTop">
+        <div class="s-Contacts--btnContent">
+          Go to top
+          <font-awesome-icon class="ml-2" icon="arrow-up" />
+        </div>
+      </button>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 section {
-  @extend .light-bg;
+  @extend .dark-bg;
+  min-height: auto;
+  height: auto;
+  overflow: hidden;
+  padding: 2rem 1rem;
 
-  button {
-    .btn-icon {
-      transform: rotate(90deg);
-      margin-left: 1rem;
-    }
-  }
   .s-Contacts {
-    &--wrapper {
-      display: grid;
-      grid-template-columns: 70% auto;
-      align-items: center;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--contactsWrapper {
+      display: flex;
     }
-    &--contacts {
-      margin-bottom: 2rem;
-      color: $color-7;
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      &:not(:last-of-type) {
+        margin-right: 3rem;
+      }
+
       b {
+        text-align: center;
         display: block;
-        color: $color-4;
+        color: $color-2;
         margin-bottom: 0.25rem;
       }
-      * {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .icon {
-        width: 24px;
-        height: solid;
-      }
     }
-    &--formContainer {
+
+    .icon {
+      margin-right: 1rem;
+      color: $color-2;
+    }
+
+    &--btnContent {
       display: flex;
-      flex-wrap: wrap;
-      flex-grow: 0;
-      gap: 1rem;
-      padding-right: 2rem;
-      .half {
-        flex-basis: 50%;
-      }
-      .medium {
-        flex-basis: 60%;
-      }
+      align-items: center;
+      justify-content: center;
     }
   }
 }

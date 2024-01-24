@@ -73,13 +73,15 @@ const commonBinds = computed(() => ({
 
   img {
     width: 20%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     margin: 1rem;
     border-radius: 50%;
   }
 
   &--text {
     text-align: left;
-    width: 40%;
+    width: 50%;
     margin: 2rem;
     margin-right: auto;
   }
@@ -87,10 +89,12 @@ const commonBinds = computed(() => ({
   &:not(.right) {
     border-top-left-radius: 8rem;
     border-bottom-left-radius: 8rem;
+    margin-left: 5rem;
   }
   &.right {
     border-top-right-radius: 8rem;
     border-bottom-right-radius: 8rem;
+    margin-right: 5rem;
     img {
       order: 2;
     }

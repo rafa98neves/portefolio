@@ -23,6 +23,7 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
 
 <style lang="scss" scoped>
 .c-ExperienceChip {
+  z-index: 4;
   display: flex;
   border: 1px solid $color-1;
   border-radius: 25px;

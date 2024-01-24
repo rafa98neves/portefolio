@@ -1,19 +1,22 @@
 <script lang="ts" setup>
 import Card from "../atoms/Card.vue";
+import GeoFigure from "../atoms/GeoFigure.vue";
 </script>
 <template>
   <section>
     <div class="s-Expertise padded-space">
+      <GeoFigure pos="bottom-left" color="light" />
+      <h3 class="text-center mb-4">About me</h3>
       <div class="s-Expertise--description">
         I'm a {{ new Date().getFullYear() - 1998 }} years old
-        <b> frontend developer </b>, passionate by coding <b> good</b>,
+        <b> Frontend Developer</b> passionate for coding <b>good</b>,
         <b>reliable</b> and <b>escalable</b> code. My professional skills are
         based on providing outstanding UIs that answer hard and complex real
         world problems and needs while also passionate on mentoring young and
         fresh engineers.
       </div>
       <div class="s-Expertise--cardContainer">
-        <Card title="Languages">
+        <Card title="Languages" :icons="['code', 'desktop', 'language']">
           <ul class="s-Expertise--list">
             <li>TypeScript</li>
             <li>JavaScript</li>
@@ -21,7 +24,14 @@ import Card from "../atoms/Card.vue";
           </ul>
         </Card>
 
-        <Card title="Frameworks">
+        <Card
+          title="Frameworks"
+          :icons="[
+            'fa-brands fa-vuejs',
+            'fa-brands fa-react',
+            'fa-brands fa-angular',
+          ]"
+        >
           <ul class="s-Expertise--list">
             <li>Vue</li>
             <li>React</li>
@@ -30,7 +40,10 @@ import Card from "../atoms/Card.vue";
           </ul>
         </Card>
 
-        <Card title="Tools">
+        <Card
+          title="Tools"
+          :icons="['screwdriver', 'code-pull-request', 'globe']"
+        >
           <ul class="s-Expertise--list">
             <li>Github</li>
             <li>Figma</li>
@@ -58,8 +71,9 @@ section {
   &--description {
     @extend .text-center;
     max-width: 40rem;
-    margin: 3rem auto 5rem auto;
+    margin: 4rem auto;
   }
+
   &--cardContainer {
     display: flex;
     gap: 2rem;

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import GeoFigure from "../atoms/GeoFigure.vue";
 import ExperienceChip from "../blocks/ExperienceChip.vue";
 import SocialLinks from "../blocks/SocialLinks.vue";
 </script>
@@ -6,17 +7,18 @@ import SocialLinks from "../blocks/SocialLinks.vue";
 <template>
   <section>
     <div class="s-Greeting padded-space">
+      <GeoFigure color="dark" />
       <div class="s-Greeting--text">
-        <h4>Hello, I am</h4>
+        <h4>Hey, I am</h4>
         <h1>Rafael Neves</h1>
         <h2 class="mb-8 pb-4">Frontend Developer</h2>
-        <p>
+        <div class="text-light">
           Building amazing UI's, writing reliable code and creating awesome
-          products
-        </p>
+          products.
+        </div>
       </div>
       <div class="s-Greeting--image" v-motion-fade-visible>
-        <img src="/me-1.png" />
+        <img src="/src/assets/images/me-1.png" />
       </div>
       <SocialLinks />
       <ExperienceChip class="s-Greeting--chip" />
@@ -44,7 +46,7 @@ section {
   }
   &--chip {
     position: absolute;
-    bottom: -2.7rem;
+    bottom: -1.8rem;
     left: 50%;
     transform: translateX(-50%);
   }

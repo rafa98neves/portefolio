@@ -3,6 +3,7 @@ html {
   @extend .medium-bg;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .padded-space {
@@ -19,5 +20,6 @@ ul {
 }
 
 section {
-  min-height: 90vh;
+  position: relative;
+  min-height: 95vh;
 }

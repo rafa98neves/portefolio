@@ -9,7 +9,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
       <h3 class="text-center mb-10">My Career</h3>
       <HistoryCard
         class="my-10"
-        image="unbabel.png"
+        image="/src/assets/images/unbabel.png"
         background-color="rgba(56, 67, 208, 1)"
       >
         <div>
@@ -32,7 +32,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
       </HistoryCard>
       <HistoryCard
         class="my-10"
-        image="grama.jpeg"
+        image="/src/assets/images/grama.jpeg"
         background-color="rgba(0, 0, 0, 1)"
         placement="left"
       >
@@ -56,7 +56,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
       </HistoryCard>
       <HistoryCard
         class="my-10"
-        image="plug.png"
+        image="/src/assets/images/plug.png"
         background-color="rgb(92, 105, 230, 1)"
       >
         <div>
@@ -84,6 +84,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
 <style lang="scss" scoped>
 section {
   @extend .medium-bg;
+  background: linear-gradient(180deg, $color-2 0%, $color-8 100%);
   min-height: 20rem;
 
   :deep(a) {

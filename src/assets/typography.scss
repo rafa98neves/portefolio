@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 200;
   word-spacing: 4px;
 }
 
@@ -36,10 +37,6 @@ h5 {
   font-size: 0.6rem;
 }
 
-p,
-span,
-div,
-li,
 b {
   font-weight: 400;
   font-size: 1rem;
@@ -51,5 +48,29 @@ a {
 }
 
 b {
+  font-weight: 700;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.text-light {
+  color: $color-1;
+}
+
+.text-warning {
+  color: $color-6;
+}
+
+.font-weight-light {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 600;
+}
+
+.font-weight-bold {
   font-weight: 700;
 }

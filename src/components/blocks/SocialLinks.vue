@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import LinkedinIcon from "@/components/icons/LinkedinIcon.vue";
-import GithubIcon from "@/components/icons/GithubIcon.vue";
-import EmailIcon from "@/components/icons/EmailIcon.vue";
-
 function open(link: string) {
   window.open(link);
 }
@@ -25,33 +21,38 @@ const commonAnimationBind = (delay = 100) => ({
 
 <template>
   <div class="c-SocialLinks">
-    <LinkedinIcon
+    <font-awesome-icon
       class="c-SocialLinks--icon"
       @click="open('https://www.linkedin.com/in/neves98rafael/')"
       v-motion
       v-bind="commonAnimationBind(200)"
-      style="top: 45%"
+      style="top: 42%"
+      :icon="['fab', 'linkedin']"
     />
-    <GithubIcon
+
+    <font-awesome-icon
       class="c-SocialLinks--icon"
       @click="open('https://github.com/rafa98neves')"
       v-motion
       v-bind="commonAnimationBind(550)"
       style="top: 50%"
+      :icon="['fab', 'github']"
     />
-    <EmailIcon
+
+    <font-awesome-icon
       class="c-SocialLinks--icon"
       @click="open('mailto:neves98rafael@gmail.com')"
       v-motion
       v-bind="commonAnimationBind(0)"
-      style="top: 55%"
+      style="top: 58%"
+      :icon="['fas', 'envelope']"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .c-SocialLinks {
-  z-index: 2;
+  z-index: 4;
   &--icon {
     position: fixed;
     right: 2.5rem;
@@ -59,9 +60,10 @@ const commonAnimationBind = (delay = 100) => ({
     cursor: pointer;
     width: 1.5rem;
     height: auto;
+    color: $color-10;
 
     &:hover {
-      right: 2.4rem;
+      right: 2.2rem;
       width: 2rem;
       :deep(path) {
         fill: black;

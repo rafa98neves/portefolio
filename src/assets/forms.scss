@@ -27,6 +27,28 @@ button {
   border-radius: 20px;
   padding: 1rem 2rem;
   display: flex;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid;
+    outline-color: $color-4;
+  }
+
+  &.btn-light {
+    background-color: $color-3;
+    border: 1px solid $color-3;
+    &:hover {
+      outline-color: $color-3;
+    }
+  }
+
+  &.btn-warning {
+    background-color: $color-6;
+    border: 1px solid $color-6;
+    &:hover {
+      outline-color: $color-1;
+    }
+  }
 
   &:disabled {
     cursor: not-allowed;

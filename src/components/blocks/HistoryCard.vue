@@ -17,9 +17,9 @@ const props = withDefaults(
 const style = computed(() => {
   let background;
   if (props.placement === "left") {
-    background = `linear-gradient(90deg, ${props.backgroundColor} 0%, ${props.backgroundColor} 25%, rgba(255, 255, 255, 0) 100%)`;
+    background = `linear-gradient(90deg, ${props.backgroundColor} 0%, ${props.backgroundColor} 25%, rgba(255, 255, 255, 0) 95%)`;
   } else {
-    background = `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, ${props.backgroundColor} 80%)`;
+    background = `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%,  ${props.backgroundColor} 80%)`;
   }
   return {
     color: props.color,
@@ -65,14 +65,11 @@ const commonBinds = computed(() => ({
   color: $color-1;
   align-items: center;
   justify-content: space-between;
-  min-height: 19rem;
-
-  &--wrapper {
-    min-height: 10rem;
-  }
+  min-height: 20rem;
+  width: 80vw;
 
   img {
-    width: 20%;
+    width: 13rem;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     margin: 1rem;
@@ -81,20 +78,21 @@ const commonBinds = computed(() => ({
 
   &--text {
     text-align: left;
-    width: 50%;
+    width: 40rem;
     margin: 2rem;
     margin-right: auto;
   }
 
-  &:not(.right) {
+  &.left {
+    margin-left: auto;
     border-top-left-radius: 8rem;
     border-bottom-left-radius: 8rem;
-    margin-left: 5rem;
   }
+
   &.right {
+    margin-right: auto;
     border-top-right-radius: 8rem;
     border-bottom-right-radius: 8rem;
-    margin-right: 5rem;
     img {
       order: 2;
     }

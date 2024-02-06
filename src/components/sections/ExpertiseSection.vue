@@ -76,11 +76,16 @@ section {
 
   &--cardContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
 
     * {
       flex-grow: 1;
       margin-top: 1rem;
+
+      @include lg {
+        min-width: 50%;
+      }
     }
   }
 

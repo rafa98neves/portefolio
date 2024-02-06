@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
 import GeoFigure from "../atoms/GeoFigure.vue";
 import ExperienceChip from "../blocks/ExperienceChip.vue";
 import SocialLinks from "../blocks/SocialLinks.vue";
+import { computed } from "vue";
+
+const { width } = useWindowSize();
+
+const isSM = computed(() => width.value <= 992);
 </script>
 
 <template>
@@ -20,7 +26,7 @@ import SocialLinks from "../blocks/SocialLinks.vue";
       <div class="s-Greeting--image" v-motion-fade-visible>
         <img src="/src/assets/images/me-1.png" />
       </div>
-      <SocialLinks />
+      <SocialLinks v-if="!isSM" />
       <ExperienceChip class="s-Greeting--chip" />
     </div>
   </section>
@@ -40,15 +46,27 @@ section {
   height: 100%;
   justify-content: space-between;
   padding-top: 1rem;
+
+  @include lg {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
   &--image {
     margin-bottom: -2rem;
-    margin-right: -1.5rem;
+    @include lg {
+      display: none;
+    }
   }
   &--chip {
     position: absolute;
     bottom: -1.8rem;
     left: 50%;
     transform: translateX(-50%);
+    @include lg {
+      bottom: -15%;
+    }
   }
   h2,
   h1 {

@@ -5,7 +5,7 @@ import { ACADEMIC_TEXT } from "@/helpers/text";
 </script>
 <template>
   <section>
-    <div class="s-History padded-space">
+    <div class="s-History">
       <h3 class="text-center mb-10">My Accomplishments</h3>
       <HistoryCard
         class="my-10"

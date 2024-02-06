@@ -1,26 +1,37 @@
 <script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    horizontal?: boolean;
+    static?: boolean;
+  }>(),
+  { horizontal: false, static: false }
+);
+
 function open(link: string) {
   window.open(link);
 }
 
-const commonAnimationBind = (delay = 100) => ({
-  initial: { transform: "translateY(0)" },
-  enter: {
-    transform: "translateY(2px)",
-    transition: {
-      delay,
-      repeat: Infinity,
-      repeatDelay: 250,
-      repeatType: "reverse",
-      ease: "easeIn",
-      duration: 500,
+const commonAnimationBind = (delay = 100) => {
+  if (props.static) return {};
+  return {
+    initial: { transform: "translateY(0)" },
+    enter: {
+      transform: "translateY(2px)",
+      transition: {
+        delay,
+        repeat: Infinity,
+        repeatDelay: 250,
+        repeatType: "reverse",
+        ease: "easeIn",
+        duration: 500,
+      },
     },
-  },
-});
+  };
+};
 </script>
 
 <template>
-  <div class="c-SocialLinks">
+  <div class="c-SocialLinks" :class="{ horizontal: props.horizontal }">
     <font-awesome-icon
       class="c-SocialLinks--icon"
       @click="open('https://www.linkedin.com/in/neves98rafael/')"
@@ -33,7 +44,7 @@ const commonAnimationBind = (delay = 100) => ({
     <font-awesome-icon
       class="c-SocialLinks--icon"
       @click="open('https://github.com/rafa98neves')"
-      v-motion
+      v-motio
       v-bind="commonAnimationBind(550)"
       style="top: 50%"
       :icon="['fab', 'github']"
@@ -53,20 +64,47 @@ const commonAnimationBind = (delay = 100) => ({
 <style lang="scss" scoped>
 .c-SocialLinks {
   z-index: 4;
+
   &--icon {
-    position: fixed;
-    right: 2.5rem;
     display: block;
     cursor: pointer;
-    width: 1.5rem;
-    height: auto;
+    font-size: 1.8rem;
     color: $color-10;
+  }
+
+  &:not(.horizontal) {
+    position: fixed;
+    right: 2.5rem;
+    height: 20vh;
+    display: grid;
 
     &:hover {
       right: 2.2rem;
-      width: 2rem;
+      font-size: 2rem;
       :deep(path) {
         fill: black;
+      }
+    }
+  }
+
+  &.horizontal {
+    padding: 2rem 0;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    .c-SocialLinks--icon {
+      display: inline-flex;
+      color: $color-2;
+      position: relative;
+
+      &:hover {
+        right: 0;
+        font-size: 1.8rem;
+        :deep(path) {
+          fill: black;
+        }
       }
     }
   }

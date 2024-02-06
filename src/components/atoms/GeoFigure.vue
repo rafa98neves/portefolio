@@ -30,18 +30,18 @@ withDefaults(
   z-index: 0;
 
   &.lg {
-    width: 50rem;
-    height: 50rem;
+    width: 50vw;
+    height: 50vh;
   }
 
   &.md {
-    width: 40rem;
-    height: 40rem;
+    width: 40vw;
+    height: 40vh;
   }
 
   &.sm {
-    width: 20rem;
-    height: 20rem;
+    width: 20vw;
+    height: 20vh;
   }
 
   &.dark {

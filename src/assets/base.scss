@@ -11,6 +11,11 @@ html {
   max-width: $max-page-width;
   margin-left: auto;
   margin-right: auto;
+
+  @include lg {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
 }
 
 ul {

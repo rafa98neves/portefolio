@@ -29,12 +29,21 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
   border-radius: 25px;
   background-color: $color-1;
   box-shadow: 0px 0px 5px 1px $color-2;
+
+  @include lg {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+
   div {
     min-width: 13rem;
     padding: 0.3rem 2rem;
     margin: 1rem 0;
     text-align: center;
     color: $color-3;
+    @include lg {
+      width: 100%;
+    }
     b {
       font-size: 1.2rem;
       font-weight: 700;
@@ -43,6 +52,9 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
     }
     &:not(:last-child) {
       border-right: 1px solid $color-2;
+      @include lg {
+        border: none;
+      }
     }
   }
 }

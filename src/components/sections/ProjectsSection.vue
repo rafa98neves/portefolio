@@ -4,22 +4,22 @@
     <div class="s-Projects padded-space">
       <h3 class="text-center mb-10">Projects</h3>
       <div class="s-Projects--wrapper">
-        <div v-motion-slide-visible-left class="s-Projects--imageWrapper">
+        <div class="s-Projects--imageWrapper">
           <p>This is a text</p>
           <img src="/src/assets/images/salaz.jpeg" />
         </div>
 
-        <div v-motion-slide-visible-left class="s-Projects--imageWrapper">
+        <div class="s-Projects--imageWrapper">
           <p>This is a text</p>
           <img src="/src/assets/images/plug-events.png" />
         </div>
 
-        <div v-motion-slide-visible-left class="s-Projects--imageWrapper">
+        <div class="s-Projects--imageWrapper">
           <p>This is a text</p>
           <img src="/src/assets/images/alt21.webp" />
         </div>
 
-        <div v-motion-slide-visible-left class="s-Projects--imageWrapper">
+        <div class="s-Projects--imageWrapper">
           <p>This is a text</p>
           <img src="/src/assets/images/Portefolio.png" />
         </div>
@@ -46,14 +46,17 @@ section {
       align-items: center;
       justify-content: center;
       cursor: pointer;
+
       p {
+        transition: 0.3s;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        display: none;
+        transform: translate(-50%, -500%);
+        opacity: 0;
       }
       img {
+        transition: 0.15s;
         height: 45vh;
       }
       &:hover {
@@ -61,7 +64,8 @@ section {
           opacity: 0.2;
         }
         p {
-          display: block;
+          transform: translate(-50%, -50%);
+          opacity: 1;
         }
       }
     }

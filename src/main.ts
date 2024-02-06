@@ -19,6 +19,7 @@ import {
   faCodePullRequest,
   faCode,
   faArrowUp,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -40,6 +41,7 @@ library.add(
   faLanguage,
   faCodePullRequest,
   faCode,
+  faBars,
   faVuejs,
   faReact,
   faAngular,

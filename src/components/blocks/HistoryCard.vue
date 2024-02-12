@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
 import { computed } from "vue";
+import { BREAKPOINTS } from "@/constants/breakpoints";
 
 const props = withDefaults(
   defineProps<{
@@ -14,27 +16,42 @@ const props = withDefaults(
   }
 );
 
+const { width } = useWindowSize();
+
+const isSM = computed(() => width.value <= BREAKPOINTS.LG);
+
 const style = computed(() => {
   let background;
-  if (props.placement === "left") {
+  let color = props.color;
+
+  if (isSM.value) {
+    background = "transparent";
+    color = "#070707";
+  } else if (props.placement === "left") {
     background = `linear-gradient(90deg, ${props.backgroundColor} 0%, ${props.backgroundColor} 25%, rgba(255, 255, 255, 0) 95%)`;
   } else {
     background = `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%,  ${props.backgroundColor} 80%)`;
   }
   return {
-    color: props.color,
+    color,
     background,
   };
 });
 
-const commonBinds = computed(() => ({
-  class: [
-    "c-HistoryCard",
-    { right: props.placement === "right", left: props.placement !== "right" },
-  ],
-  delay: 200,
-  style: style.value,
-}));
+const commonBinds = computed(() => {
+  const out: any = {
+    class: [
+      "c-HistoryCard",
+      { right: props.placement === "right", left: props.placement !== "right" },
+    ],
+    delay: 200,
+    style: style.value,
+  };
+  if (isSM.value) {
+    out.initial = { y: 0 };
+  }
+  return out;
+});
 </script>
 
 <template>
@@ -61,6 +78,7 @@ const commonBinds = computed(() => ({
 
 <style lang="scss" scoped>
 .c-HistoryCard {
+  position: relative;
   display: flex;
   color: $color-1;
   align-items: center;
@@ -69,7 +87,7 @@ const commonBinds = computed(() => ({
   width: 80vw;
 
   img {
-    width: 13rem;
+    width: min(100%, 13rem);
     aspect-ratio: 1 / 1;
     object-fit: cover;
     margin: 1rem;
@@ -78,8 +96,8 @@ const commonBinds = computed(() => ({
 
   &--text {
     text-align: left;
-    width: 40rem;
-    margin: 2rem;
+    width: min(100%, 40rem);
+    padding: 2rem;
     margin-right: auto;
   }
 
@@ -100,6 +118,25 @@ const commonBinds = computed(() => ({
       margin-left: auto;
       margin-right: 0;
       color: $color-8;
+    }
+  }
+
+  @include md {
+    width: 100vw;
+    border-radius: 0 !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: min(100%, 6rem);
+      margin: 0;
+      order: 0 !important;
+    }
+
+    &--text {
+      color: $color-5 !important;
+      padding: 2 0.5rem;
+      text-align: center;
     }
   }
 }

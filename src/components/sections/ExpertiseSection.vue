@@ -59,6 +59,7 @@ import GeoFigure from "../atoms/GeoFigure.vue";
 
 <style lang="scss" scoped>
 section {
+  min-height: 50rem;
   @extend .light-bg;
 }
 .s-Expertise {

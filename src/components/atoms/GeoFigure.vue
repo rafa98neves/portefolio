@@ -1,47 +1,68 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    pos?:
-      | "top-right"
-      | "top-left"
-      | "bottom-left"
-      | "bottom-right"
-      | "bottom-center"
-      | "top-center";
+    pos?: "top-right" | "top-left" | "bottom-left" | "bottom-right";
     color?: "dark" | "light";
-    size?: "sm" | "md" | "lg";
   }>(),
   {
     pos: "top-right",
     color: "light",
-    size: "lg",
   }
 );
 </script>
 
 <template>
-  <div class="c-GeoFigure" :class="[color, pos, size]" />
+  <div class="c-GeoFigure" :class="[color, pos]" />
 </template>
 
 <style lang="scss" scoped>
+$width-sm: 25rem;
+$half-width-sm: 12.5rem;
+
+$width: 50rem;
+$half-width: 25rem;
 .c-GeoFigure {
   position: absolute;
   border-radius: 50%;
   z-index: 0;
-
-  &.lg {
-    width: 50vw;
-    height: 50vh;
+  width: $width;
+  height: $width;
+  @include lg {
+    width: $width-sm;
+    height: $width-sm;
   }
 
-  &.md {
-    width: 40vw;
-    height: 40vh;
+  &.top-right {
+    top: -$half-width;
+    right: -$half-width;
+    @include lg {
+      top: -$half-width-sm;
+      right: -$half-width-sm;
+    }
   }
-
-  &.sm {
-    width: 20vw;
-    height: 20vh;
+  &.top-left {
+    top: -$half-width;
+    left: -$half-width;
+    @include lg {
+      top: -$half-width-sm;
+      left: -$half-width-sm;
+    }
+  }
+  &.bottom-right {
+    bottom: -$half-width;
+    right: -$half-width;
+    @include lg {
+      bottom: -$half-width-sm;
+      right: -$half-width-sm;
+    }
+  }
+  &.bottom-left {
+    bottom: -$half-width;
+    left: -$half-width;
+    @include lg {
+      bottom: -$half-width-sm;
+      left: -$half-width-sm;
+    }
   }
 
   &.dark {
@@ -52,37 +73,6 @@ withDefaults(
   &.light {
     background-color: $color-2;
     border-color: $color-2;
-  }
-
-  &.top-right {
-    top: -50%;
-    right: -40%;
-  }
-
-  &.top-left {
-    top: -50%;
-    left: -40%;
-  }
-
-  &.top-center {
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &.bottom-right {
-    bottom: -50%;
-    right: -40%;
-  }
-
-  &.bottom-left {
-    bottom: -50%;
-    left: -30%;
-  }
-
-  &.bottom-center {
-    bottom: -100%;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 </style>

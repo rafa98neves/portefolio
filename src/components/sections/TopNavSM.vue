@@ -13,7 +13,11 @@ const nav = ref(null);
 
 const routeName = computed(() => router.currentRoute.value.name as ROUTE_NAME);
 
-onClickOutside(nav, toggle);
+onClickOutside(nav, close);
+
+function close() {
+  menuOpen.value = false;
+}
 
 function toggle() {
   menuOpen.value = !menuOpen.value;

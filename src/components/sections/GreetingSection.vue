@@ -4,10 +4,11 @@ import GeoFigure from "../atoms/GeoFigure.vue";
 import ExperienceChip from "../blocks/ExperienceChip.vue";
 import SocialLinks from "../blocks/SocialLinks.vue";
 import { computed } from "vue";
+import { BREAKPOINTS } from "@/constants/breakpoints";
 
 const { width } = useWindowSize();
 
-const isSM = computed(() => width.value <= 992);
+const isSM = computed(() => width.value <= BREAKPOINTS.LG);
 </script>
 
 <template>

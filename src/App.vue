@@ -4,10 +4,11 @@ import TopNav from "@/components/sections/TopNav.vue";
 import TopNavSM from "@/components/sections/TopNavSM.vue";
 import { computed } from "vue";
 import { useWindowSize } from "@vueuse/core";
+import { BREAKPOINTS } from "./constants/breakpoints";
 
 const { width } = useWindowSize();
 
-const isSM = computed(() => width.value <= 992);
+const isSM = computed(() => width.value <= BREAKPOINTS.LG);
 </script>
 
 <template>

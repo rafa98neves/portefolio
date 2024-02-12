@@ -42,7 +42,7 @@ import { ACADEMIC_TEXT } from "@/helpers/text";
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-10"
+        class="mt-10"
         image="/src/assets/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
         placement="left"

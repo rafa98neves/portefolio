@@ -55,7 +55,7 @@ import { HISTORY_TEXT } from "@/helpers/text";
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-10"
+        class="mt-10"
         image="/src/assets/images/plug.png"
         background-color="rgb(92, 105, 230, 1)"
       >

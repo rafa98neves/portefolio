@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import HistoryCard from "../blocks/HistoryCard.vue";
 import Chip from "../atoms/Chip.vue";
-import { HISTORY_TEXT } from "@/helpers/text";
+import { HISTORY_TEXT } from "@/constants/text";
 </script>
 <template>
   <section>
-    <div class="s-History">
+    <div class="s-History padded-space">
       <h3 class="text-center mb-10">My Career</h3>
       <HistoryCard
         class="my-10"

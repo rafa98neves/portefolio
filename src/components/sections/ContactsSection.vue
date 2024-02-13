@@ -61,15 +61,28 @@ section {
     align-items: center;
     justify-content: center;
 
+    
     &--contactsWrapper {
       display: flex;
+
+      @include lg{
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+      }
     }
 
     .contact {
       display: inline-flex;
       align-items: center;
+      
       &:not(:last-of-type) {
         margin-right: 3rem;
+      }
+
+      @include lg{
+        justify-content: center;
+        margin-right: 0 !important;
       }
 
       b {

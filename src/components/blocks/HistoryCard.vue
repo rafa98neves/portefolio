@@ -38,20 +38,18 @@ const style = computed(() => {
   };
 });
 
-const commonBinds = computed(() => {
-  const out: any = {
+const isRight = computed(() => props.placement === 'right' && !isSM.value)
+
+const isLeft = computed(() => props.placement !== 'right' && !isSM.value)
+
+const commonBinds = computed(() => ({
     class: [
       "c-HistoryCard",
-      { right: props.placement === "right", left: props.placement !== "right" },
+      { right: isRight.value, left: isLeft.value },
     ],
     delay: 200,
     style: style.value,
-  };
-  if (isSM.value) {
-    out.initial = { y: 0 };
-  }
-  return out;
-});
+  }));
 </script>
 
 <template>
@@ -84,8 +82,7 @@ const commonBinds = computed(() => {
   align-items: center;
   justify-content: space-between;
   min-height: 20rem;
-  width: 80vw;
-
+  width: 120%;
   img {
     width: min(100%, 13rem);
     aspect-ratio: 1 / 1;
@@ -102,13 +99,13 @@ const commonBinds = computed(() => {
   }
 
   &.left {
-    margin-left: auto;
+    margin-right: -20%;
     border-top-left-radius: 8rem;
     border-bottom-left-radius: 8rem;
   }
 
   &.right {
-    margin-right: auto;
+    margin-left: -20%;
     border-top-right-radius: 8rem;
     border-bottom-right-radius: 8rem;
     img {
@@ -122,7 +119,7 @@ const commonBinds = computed(() => {
   }
 
   @include md {
-    width: 100vw;
+    width: 100%;
     border-radius: 0 !important;
     flex-wrap: wrap;
     align-items: center;

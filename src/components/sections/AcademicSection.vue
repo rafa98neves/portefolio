@@ -1,18 +1,19 @@
 <script lang="ts" setup>
 import HistoryCard from "../blocks/HistoryCard.vue";
 import Chip from "../atoms/Chip.vue";
-import { ACADEMIC_TEXT } from "@/helpers/text";
+import { ACADEMIC_TEXT } from "@/constants/text";
 </script>
 <template>
   <section>
-    <div class="s-History">
+    <div class="s-Academic padded-space">
       <h3 class="text-center mb-10">My Accomplishments</h3>
       <HistoryCard
         class="my-10"
         image="/src/assets/images/uc.webp"
         background-color="rgba(255, 255, 255, 1)"
+        placement="left"
       >
-        <div class="s-History--text">
+        <div class="s-Academic--text">
           <div class="mb-4">
             <b> {{ ACADEMIC_TEXT.MASTERS.HEADER }}</b>
           </div>
@@ -35,7 +36,7 @@ import { ACADEMIC_TEXT } from "@/helpers/text";
                 ...ACADEMIC_TEXT.MASTERS.CHIPS,
                 ...ACADEMIC_TEXT.UNIVERSITY.CHIPS,
               ]"
-              class="s-History--chipContainer"
+              class="s-Academic--chipContainer"
               :label="chip"
             />
           </div>
@@ -45,9 +46,8 @@ import { ACADEMIC_TEXT } from "@/helpers/text";
         class="mt-10"
         image="/src/assets/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
-        placement="left"
       >
-        <div class="s-History--text">
+        <div class="s-Academic--text">
           <div class="mb-4">
             <b> {{ ACADEMIC_TEXT.MUSIC.HEADER }}</b>
           </div>
@@ -59,7 +59,7 @@ import { ACADEMIC_TEXT } from "@/helpers/text";
           <div class="mt-4">
             <Chip
               v-for="chip in ACADEMIC_TEXT.MUSIC.CHIPS"
-              class="s-History--chipContainer"
+              class="s-Academic--chipContainer"
               :label="chip"
             />
           </div>
@@ -79,12 +79,12 @@ section {
     font-weight: 600;
   }
 
-  .s-History--chipContainer {
+  .s-Academic--chipContainer {
     display: inline-block;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
   }
-  .s-History--text {
+  .s-Academic--text {
     color: $color-5;
     :deep(a) {
       color: $color-5 !important;

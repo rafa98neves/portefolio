@@ -76,3 +76,44 @@ export const ACADEMIC_TEXT = {
     CHIPS: ["Vue 2", "TypeScript"],
   },
 };
+
+export const PROJECTS = [
+  {
+    title: "Unbabel Portal",
+    description: `Portal is the customer-facing product of Unbabel, giving customer service
+    teams an easy way to manage language operations and optimize customer experience over time`,
+    file: "unbabel-2.png",
+    redirectTo:
+      "https://unbabel.com/sv/introducing-the-unbabel-portal-a-new-way-to-manage-customer-service-language-operations/",
+  },
+  {
+    title: "ALT21 - X-Hedge",
+    description: `X-Hedge is a platform that allows any business to 
+      offer own-branded currency hedging solutions`,
+    file: "x-hedge.png",
+    redirectTo: "https://www.alt21.com/x-hedge/",
+    width: "40%",
+  },
+  {
+    title: "Plug Events",
+    description: `Plug Events is an event finder/creator that allows artists to 
+    easly connect with each other`,
+    file: "plug-events.png",
+    redirectTo: "https://www.plug.events/space/_/_/events",
+    width: "40%",
+  },
+  {
+    title: "My Portefolio",
+    description: `My portefolio is a great place to know a little bit more about me but also
+    a great place to see how I code. Feel free to go to my github and checking the code!`,
+    file: "Portefolio.png",
+    redirectTo: "https://github.com/rafa98neves/portefolio",
+  },
+  {
+    title: "Sala-Z",
+    description: `Sala-Z is a musical venue manager web application that provides an easy
+    and intuitive way of managing multiple events in your venue (currently down)`,
+    file: "salaz.jpeg",
+    redirectTo: "https://www.grama.io/work/sala-z.html",
+  },
+];

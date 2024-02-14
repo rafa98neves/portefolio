@@ -61,27 +61,26 @@ section {
     align-items: center;
     justify-content: center;
 
-    
     &--contactsWrapper {
       display: flex;
 
-      @include lg{
+      @include maxLG {
         flex-direction: column;
-        gap: 2rem;
         justify-content: center;
+        gap: 2rem;
       }
     }
 
     .contact {
       display: inline-flex;
       align-items: center;
-      
+
       &:not(:last-of-type) {
         margin-right: 3rem;
       }
 
-      @include lg{
-        justify-content: center;
+      @include maxLG {
+        padding-left: 1rem;
         margin-right: 0 !important;
       }
 
@@ -90,6 +89,9 @@ section {
         display: block;
         color: $color-2;
         margin-bottom: 0.25rem;
+        @include maxLG {
+          text-align: start;
+        }
       }
     }
 

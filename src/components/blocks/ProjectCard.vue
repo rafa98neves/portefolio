@@ -1,64 +1,96 @@
 <script setup lang="ts">
-defineProps<{
+import { useViewport } from "@/composables/layout";
+import { computed } from "vue";
+
+const props = defineProps<{
   title: string;
   text: string;
   file: string;
+
+  redirect?: string;
   width?: string;
 }>();
+
+const { isMD } = useViewport();
+
+const styledWidth = computed(() => (isMD.value ? "100%" : props.width));
+
+function redirect() {
+  window.open(props.redirect, "_blank");
+}
 </script>
 
 <template>
-  <div :style="{ width }" class="c-ProjectCard">
-    <h4 class="mb-4">{{ title }}</h4>
-    <div class="c-ProjectCard--text">{{ text }}</div>
-    <img :src="`/src/assets/images/${file}`" />
+  <div :style="{ width: styledWidth }" class="c-ProjectCard">
+    <div class="c-ProjectCard--text">
+      <h4 class="mb-4">{{ title }}</h4>
+      {{ text }}
+      <button
+        class="btn-light mt-6"
+        v-if="redirect"
+        @click.prevent.stop="redirect"
+      >
+        See it for yourself!
+      </button>
+    </div>
+    <div class="c-ProjectCard--image">
+      <img :src="`/src/assets/images/${file}`" />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .c-ProjectCard {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 
-  &:hover {
+  &--image {
     img {
-      opacity: 0.05;
-    }
-
-    .c-ProjectCard--text {
-      transform: translate(-50%, -50%);
-      opacity: 1;
+      width: 100%;
     }
   }
 
   &--text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     @extend .text-center;
     transition: 0.3s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -500%);
-    opacity: 0;
-    padding: 2rem;
+    z-index: 3;
   }
 
   img {
     transition: 0.15s;
-    width: 100%;
   }
 
-  @include lg {
+  @include minLG {
+    &--text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(40rem, 100%);
+      opacity: 0;
+      transform: translate(-50%, -100%);
+    }
+
+    &:hover {
+      img {
+        opacity: 0.05;
+      }
+
+      .c-ProjectCard--text {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+  }
+
+  @include maxLG {
     img {
-      opacity: 0.2;
+      display: none;
     }
     &--text {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      padding: 0;
+      margin: 3rem;
     }
   }
 }

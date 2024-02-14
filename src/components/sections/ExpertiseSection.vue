@@ -84,7 +84,7 @@ section {
       flex-grow: 1;
       margin-top: 1rem;
 
-      @include lg {
+      @include maxLG {
         min-width: 50%;
       }
     }

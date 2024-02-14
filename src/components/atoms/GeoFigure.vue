@@ -27,7 +27,7 @@ $half-width: 25rem;
   z-index: 0;
   width: $width;
   height: $width;
-  @include lg {
+  @include maxLG {
     width: $width-sm;
     height: $width-sm;
   }
@@ -35,7 +35,7 @@ $half-width: 25rem;
   &.top-right {
     top: -$half-width;
     right: -$half-width;
-    @include lg {
+    @include maxLG {
       top: -$half-width-sm;
       right: -$half-width-sm;
     }
@@ -43,7 +43,7 @@ $half-width: 25rem;
   &.top-left {
     top: -$half-width;
     left: -$half-width;
-    @include lg {
+    @include maxLG {
       top: -$half-width-sm;
       left: -$half-width-sm;
     }
@@ -51,7 +51,7 @@ $half-width: 25rem;
   &.bottom-right {
     bottom: -$half-width;
     right: -$half-width;
-    @include lg {
+    @include maxLG {
       bottom: -$half-width-sm;
       right: -$half-width-sm;
     }
@@ -59,7 +59,7 @@ $half-width: 25rem;
   &.bottom-left {
     bottom: -$half-width;
     left: -$half-width;
-    @include lg {
+    @include maxLG {
       bottom: -$half-width-sm;
       left: -$half-width-sm;
     }

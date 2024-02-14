@@ -38,18 +38,15 @@ const style = computed(() => {
   };
 });
 
-const isRight = computed(() => props.placement === 'right' && !isSM.value)
+const isRight = computed(() => props.placement === "right" && !isSM.value);
 
-const isLeft = computed(() => props.placement !== 'right' && !isSM.value)
+const isLeft = computed(() => props.placement !== "right" && !isSM.value);
 
 const commonBinds = computed(() => ({
-    class: [
-      "c-HistoryCard",
-      { right: isRight.value, left: isLeft.value },
-    ],
-    delay: 200,
-    style: style.value,
-  }));
+  class: ["c-HistoryCard", { right: isRight.value, left: isLeft.value }],
+  delay: 200,
+  style: style.value,
+}));
 </script>
 
 <template>
@@ -118,7 +115,7 @@ const commonBinds = computed(() => ({
     }
   }
 
-  @include md {
+  @include maxMD {
     width: 100%;
     border-radius: 0 !important;
     flex-wrap: wrap;

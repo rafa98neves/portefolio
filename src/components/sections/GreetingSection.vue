@@ -48,7 +48,7 @@ section {
   justify-content: space-between;
   padding-top: 1rem;
 
-  @include lg {
+  @include maxLG {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
@@ -56,7 +56,7 @@ section {
 
   &--image {
     margin-bottom: -2rem;
-    @include lg {
+    @include maxLG {
       display: none;
     }
   }
@@ -65,7 +65,7 @@ section {
     bottom: -1.8rem;
     left: 50%;
     transform: translateX(-50%);
-    @include lg {
+    @include maxLG {
       bottom: -15%;
     }
   }

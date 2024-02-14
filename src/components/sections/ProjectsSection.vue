@@ -8,11 +8,12 @@ import { PROJECTS } from "@/constants/text";
       <h3 class="text-center mb-10">I worked on</h3>
       <div class="s-Projects--wrapper">
         <ProjectCard
-          v-for="{ title, description, file, width } in PROJECTS"
+          v-for="{ title, description, file, width, redirectTo } in PROJECTS"
           :width="width"
           :title="title"
           :text="description"
           :file="file"
+          :redirect="redirectTo"
         />
       </div>
     </div>
@@ -27,8 +28,9 @@ section {
     &--wrapper {
       display: flex;
       flex-wrap: wrap;
-      flex-grow: 1;
-      justify-content: space-between;
+      gap: 2rem;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }

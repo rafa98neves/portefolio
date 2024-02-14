@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useWindowSize } from "@vueuse/core";
 import { computed } from "vue";
-import { BREAKPOINTS } from "@/constants/breakpoints";
+import { useViewport } from "@/composables/layout";
 
 const props = withDefaults(
   defineProps<{
@@ -16,15 +15,13 @@ const props = withDefaults(
   }
 );
 
-const { width } = useWindowSize();
-
-const isSM = computed(() => width.value <= BREAKPOINTS.LG);
+const { isMD } = useViewport();
 
 const style = computed(() => {
   let background;
   let color = props.color;
 
-  if (isSM.value) {
+  if (isMD.value) {
     background = "transparent";
     color = "#070707";
   } else if (props.placement === "left") {
@@ -38,9 +35,9 @@ const style = computed(() => {
   };
 });
 
-const isRight = computed(() => props.placement === "right" && !isSM.value);
+const isRight = computed(() => props.placement === "right" && !isMD.value);
 
-const isLeft = computed(() => props.placement !== "right" && !isSM.value);
+const isLeft = computed(() => props.placement !== "right" && !isMD.value);
 
 const commonBinds = computed(() => ({
   class: ["c-HistoryCard", { right: isRight.value, left: isLeft.value }],

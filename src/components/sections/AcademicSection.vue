@@ -14,9 +14,10 @@ import { ACADEMIC_TEXT } from "@/constants/text";
         placement="left"
       >
         <div class="s-Academic--text">
-          <div class="mb-4">
-            <b> {{ ACADEMIC_TEXT.MASTERS.HEADER }}</b>
-          </div>
+          <div
+            class="s-Academic--text-header mb-4"
+            v-html="ACADEMIC_TEXT.MASTERS.HEADER"
+          />
 
           <div v-for="text in ACADEMIC_TEXT.MASTERS.TEXT">
             <span v-html="text" />
@@ -48,8 +49,11 @@ import { ACADEMIC_TEXT } from "@/constants/text";
         background-color="rgba(161,105,54,255)"
       >
         <div class="s-Academic--text">
-          <div class="mb-4">
+          <div class="s-Academic--text-header">
             <b> {{ ACADEMIC_TEXT.MUSIC.HEADER }}</b>
+          </div>
+          <div class="s-Academic--text-subheader mb-4">
+            {{ ACADEMIC_TEXT.MUSIC.SUBHEADER }}
           </div>
 
           <div v-for="text in ACADEMIC_TEXT.MUSIC.TEXT">
@@ -88,6 +92,9 @@ section {
     color: $color-5;
     :deep(a) {
       color: $color-5 !important;
+    }
+    &-header {
+      display: inline-flex;
     }
   }
 }

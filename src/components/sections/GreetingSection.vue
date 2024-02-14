@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { useWindowSize } from "@vueuse/core";
 import GeoFigure from "../atoms/GeoFigure.vue";
 import ExperienceChip from "../blocks/ExperienceChip.vue";
 import SocialLinks from "../blocks/SocialLinks.vue";
-import { computed } from "vue";
-import { BREAKPOINTS } from "@/constants/breakpoints";
+import { useViewport } from "@/composables/layout";
 
-const { width } = useWindowSize();
-
-const isSM = computed(() => width.value <= BREAKPOINTS.LG);
+const { isMD } = useViewport();
 </script>
 
 <template>
@@ -27,7 +23,7 @@ const isSM = computed(() => width.value <= BREAKPOINTS.LG);
       <div class="s-Greeting--image" v-motion-fade-visible>
         <img src="/src/assets/images/me-1.png" />
       </div>
-      <SocialLinks v-if="!isSM" />
+      <SocialLinks v-if="!isMD" />
       <ExperienceChip class="s-Greeting--chip" />
     </div>
   </section>

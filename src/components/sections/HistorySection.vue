@@ -13,14 +13,17 @@ import { HISTORY_TEXT } from "@/constants/text";
         background-color="rgba(56, 67, 208, 1)"
       >
         <div>
-          <div class="mb-4">
-            <b> {{ HISTORY_TEXT.UNBABEL.HEADER }}</b>
-          </div>
-
+          <div
+            class="s-History--text-header"
+            v-html="HISTORY_TEXT.UNBABEL.HEADER"
+          />
+          <div
+            class="s-History--text-subheader mb-4"
+            v-html="HISTORY_TEXT.UNBABEL.SUBHEADER"
+          />
           <div v-for="text in HISTORY_TEXT.UNBABEL.TEXT">
             <span v-html="text" />
           </div>
-
           <div class="mt-4">
             <Chip
               v-for="chip in HISTORY_TEXT.UNBABEL.CHIPS"
@@ -37,10 +40,14 @@ import { HISTORY_TEXT } from "@/constants/text";
         placement="left"
       >
         <div>
-          <div class="mb-4">
-            <b> {{ HISTORY_TEXT.GRAMA.HEADER }}</b>
-          </div>
-
+          <div
+            class="s-History--text-header"
+            v-html="HISTORY_TEXT.GRAMA.HEADER"
+          />
+          <div
+            class="s-History--text-subheader mb-4"
+            v-html="HISTORY_TEXT.GRAMA.SUBHEADER"
+          />
           <div v-for="text in HISTORY_TEXT.GRAMA.TEXT" class="mb-2">
             <span v-html="text" />
           </div>
@@ -50,6 +57,7 @@ import { HISTORY_TEXT } from "@/constants/text";
               v-for="chip in HISTORY_TEXT.GRAMA.CHIPS"
               class="s-History--chipContainer"
               :label="chip"
+              :dark="false"
             />
           </div>
         </div>
@@ -60,10 +68,14 @@ import { HISTORY_TEXT } from "@/constants/text";
         background-color="rgb(92, 105, 230, 1)"
       >
         <div>
-          <div class="mb-4">
-            <b> {{ HISTORY_TEXT.PLUG.HEADER }}</b>
-          </div>
-
+          <div
+            class="s-History--text-header"
+            v-html="HISTORY_TEXT.PLUG.HEADER"
+          />
+          <div
+            class="s-History--text-subheader mb-4"
+            v-html="HISTORY_TEXT.PLUG.SUBHEADER"
+          />
           <div v-for="text in HISTORY_TEXT.PLUG.TEXT">
             <span v-html="text" />
           </div>
@@ -96,6 +108,12 @@ section {
     display: inline-block;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
+  }
+
+  .s-History--text-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 </style>

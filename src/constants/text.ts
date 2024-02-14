@@ -1,12 +1,11 @@
 export const HISTORY_TEXT = {
   UNBABEL: {
-    HEADER: `2022 - Present | Lisbon`,
+    HEADER: `<h3>Unbabel</h3> Seamless Multilingual Translation Services`,
+    SUBHEADER: `2022 - Present | Lisbon`,
     TEXT: [
-      `I'm working for
-            <a href="https://unbabel.com" target="_blank"> Unbabel </a> since
-            August of 2022. I'm part of the frontend development team for
-            <a href="https://vimeo.com/472231953" target="_blank"> Portal </a>
-            used by some of the biggest companies in the world.`,
+      `I've been with<a href="https://unbabel.com" target="_blank"> Unbabel </a>since August 2022,
+        serving as the lead frontend developer for a key tech cluster. On a daily basis, I develop UIs
+        utilized by prominent global entities such as Booking.com, Adidas, LEGO, and more.`,
     ],
     CHIPS: [
       "Vue 2",
@@ -18,21 +17,15 @@ export const HISTORY_TEXT = {
     ],
   },
   GRAMA: {
-    HEADER: `2020 - 2022 | Coimbra`,
+    HEADER: "<h3>Grama</h3> My Formative Years in Tech",
+    SUBHEADER: `2020 - 2022 | Coimbra`,
     TEXT: [
-      `I started my professional journey as a software developer working
-    for a tech start-up named
-    <a href="https://grama.io" target="_blank"> Grama </a>.`,
-      `As an entry-level developer I started my career building an
-    application from scratch called
-    <a href="https://www.grama.io/work/sala-z.html" target="_blank">
-      Sala-Z
-    </a>
-    where I learned a lot about backend micro-services architectures and
-    also where I started loving TypeScript and Vue.`,
-      `After that, I joined the frontend team of one of Grama's clients,
-    <a href="https://alt21.com" target="_blank"> ALT21</a>, where I grew
-    my skills as a frontend developer.`,
+      `I embarked on my professional journey as a software developer at the tech startup 
+        <a href='https://grama.io' target='_blank'>Grama</a>. 
+        In my initial role, I spearheaded the development of an application called <a href='https://www.grama.io/work/sala-z.html' target='_blank'>Sala-Z</a>
+        from inception. This experience allowed me to immerse myself in backend micro-services architectures and sparked my passion for TypeScript and Vue.js.
+        Subsequently, I transitioned to the frontend team at <a href='https://alt21.com' target='_blank'>ALT21</a>, 
+        a client of Grama, where I honed my skills further as a frontend developer.`,
     ],
     CHIPS: [
       "Vue 2",
@@ -45,11 +38,14 @@ export const HISTORY_TEXT = {
     ],
   },
   PLUG: {
-    HEADER: `2022 - 2023 | Irland`,
+    HEADER: `<h3>Plug Events</h3> Unique online spaces for all interests and places.`,
+    SUBHEADER: `2022 - 2023 | Irland`,
     TEXT: [
-      `I was also a contributor for a small group of friendly developers that
-        build and mantains a web-application called
-        <a href="https://about.plug.events/" target="_blank"> Plug-Events</a>.`,
+      `I served as a part-time contributor to a close-knit team of developers, collaborating
+        on the development and maintenance of a web application known as 
+        <a href="https://about.plug.events/" target="_blank"> Plug-Events</a>.
+        Despite dedicating only three months to after-hours work with the team, I embraced numerous 
+        challenges and gained invaluable insights and skills along the way.`,
     ],
     CHIPS: ["Vue 2", "TypeScript"],
   },
@@ -71,9 +67,15 @@ export const ACADEMIC_TEXT = {
     CHIPS: [],
   },
   MUSIC: {
-    HEADER: `Music enthusiast`,
-    TEXT: [`Co-founder of brass fusion & 8th grade music school`],
-    CHIPS: ["Vue 2", "TypeScript"],
+    HEADER: `Journey of a Musician-Turned-Engineer`,
+    SUBHEADER: `Finding Harmony in Two Worlds`,
+    TEXT: [
+      `I've been immersed in music since the age of 10, completing music school and even working part-time
+        as a music teacher while pursuing my engineering degree. 
+        Although I now devote most of my time to engineering, I still cherish occasional moments to play music.
+        As a co-founder of the animation band 'Brass Fusion,' my passion for music remains alive.`,
+    ],
+    CHIPS: ["Teamwork", "Public skills", "Creative"],
   },
 };
 
@@ -88,31 +90,31 @@ export const PROJECTS = [
   },
   {
     title: "ALT21 - X-Hedge",
-    description: `X-Hedge is a platform that allows any business to 
-      offer own-branded currency hedging solutions`,
+    description: `X-Hedge is a pioneering platform enabling businesses to provide customized currency 
+      hedging solutions under their own brand.`,
     file: "x-hedge.png",
     redirectTo: "https://www.alt21.com/x-hedge/",
     width: "40%",
   },
   {
     title: "Plug Events",
-    description: `Plug Events is an event finder/creator that allows artists to 
-    easly connect with each other`,
+    description: `Plug Events is a dynamic platform designed for artists, simplifying the process of finding and creating events
+      while fostering seamless connections within the artistic community.`,
     file: "plug-events.png",
     redirectTo: "https://www.plug.events/space/_/_/events",
     width: "40%",
   },
   {
     title: "My Portefolio",
-    description: `My portefolio is a great place to know a little bit more about me but also
-    a great place to see how I code. Feel free to go to my github and checking the code!`,
+    description: `My portfolio not only offers insights into who I am but also serves as a showcase of my coding skills.
+      Feel free to explore my GitHub repository to delve into my coding projects and methodologies.`,
     file: "Portefolio.png",
     redirectTo: "https://github.com/rafa98neves/portefolio",
   },
   {
     title: "Sala-Z",
-    description: `Sala-Z is a musical venue manager web application that provides an easy
-    and intuitive way of managing multiple events in your venue (currently down)`,
+    description: `Sala-Z is a web application designed to manage musical venues, offering a straightforward 
+      and intuitive platform for handling multiple events. (Currently undergoing maintenance)`,
     file: "salaz.jpeg",
     redirectTo: "https://www.grama.io/work/sala-z.html",
   },

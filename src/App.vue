@@ -2,18 +2,14 @@
 import { RouterView } from "vue-router";
 import TopNav from "@/components/sections/TopNav.vue";
 import TopNavSM from "@/components/sections/TopNavSM.vue";
-import { computed } from "vue";
-import { useWindowSize } from "@vueuse/core";
-import { BREAKPOINTS } from "./constants/breakpoints";
+import { useViewport } from "./composables/layout";
 
-const { width } = useWindowSize();
-
-const isSM = computed(() => width.value <= BREAKPOINTS.LG);
+const { isMD } = useViewport();
 </script>
 
 <template>
   <div class="app">
-    <TopNav v-if="!isSM" />
+    <TopNav v-if="!isMD" />
     <TopNavSM v-else />
     <RouterView class="view-container" />
   </div>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps<{ label: string }>();
+withDefaults(defineProps<{ label: string; dark?: boolean }>(), { dark: true });
 </script>
 
 <template>
-  <div class="c-Chip">
+  <div class="c-Chip" :class="{ dark }">
     {{ label }}
   </div>
 </template>
@@ -14,12 +14,15 @@ defineProps<{ label: string }>();
   font-size: 12px;
   display: table-cell;
   white-space: nowrap;
-  color: $color-8;
-  background-color: $color-5;
-  border: 1px solid $color-5;
-  box-shadow: 0px 0px 6px 1px $color-10;
   border-radius: 14px;
   text-align: center;
   padding: 0.25rem 0.75rem;
+  color: $color-8;
+  box-shadow: 0px 0px 6px 1px $color-10;
+  background-color: $color-5;
+  border: 1px solid $color-5;
+  &.dark {
+    color: $color-8;
+  }
 }
 </style>

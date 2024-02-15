@@ -9,7 +9,7 @@ import { HISTORY_TEXT } from "@/constants/text";
       <h3 class="text-center mb-10">My Career</h3>
       <HistoryCard
         class="my-10"
-        image="/src/assets/images/unbabel.png"
+        image="public/images/unbabel.png"
         background-color="rgba(56, 67, 208, 1)"
       >
         <div>
@@ -35,7 +35,7 @@ import { HISTORY_TEXT } from "@/constants/text";
       </HistoryCard>
       <HistoryCard
         class="my-10"
-        image="/src/assets/images/grama.jpeg"
+        image="public/images/grama.jpeg"
         background-color="rgba(0, 0, 0, 1)"
         placement="left"
       >
@@ -64,7 +64,7 @@ import { HISTORY_TEXT } from "@/constants/text";
       </HistoryCard>
       <HistoryCard
         class="mt-10"
-        image="/src/assets/images/plug.png"
+        image="public/images/plug.png"
         background-color="rgb(92, 105, 230, 1)"
       >
         <div>

@@ -42,6 +42,7 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
     text-align: center;
     color: $color-3;
     @include maxLG {
+      margin: 0.5rem 0;
       width: 100%;
     }
     b {

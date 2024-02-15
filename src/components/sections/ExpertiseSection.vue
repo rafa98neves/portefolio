@@ -8,12 +8,17 @@ import GeoFigure from "../atoms/GeoFigure.vue";
       <GeoFigure pos="bottom-left" color="light" />
       <h3 class="text-center mb-4">About me</h3>
       <div class="s-Expertise--description">
-        I'm a {{ new Date().getFullYear() - 1998 }} years old
-        <b> Frontend Developer</b> passionate for coding <b>good</b>,
-        <b>reliable</b> and <b>escalable</b> code. My professional skills are
-        based on providing outstanding UIs that answer hard and complex real
-        world problems and needs while also passionate on mentoring young and
-        fresh engineers.
+        <div class="mb-2">
+          I am a {{ new Date().getFullYear() - 1998 }}-year-old
+          <b>Frontend Developer</b> driven by a passion for crafting
+          <b>high-quality</b>, <b>reliable</b>, and <b>scalable</b> code.
+        </div>
+        <div>
+          My expertise lies in designing exceptional user interfaces that
+          effectively address challenging real-world problems and requirements.
+          Additionally, I am enthusiastic about mentoring and guiding aspiring
+          engineers.
+        </div>
       </div>
       <div class="s-Expertise--cardContainer">
         <Card title="Languages" :icons="['code', 'desktop', 'language']">
@@ -68,6 +73,10 @@ section {
   justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
+
+  @include maxLG {
+    margin-top: 7rem;
+  }
 
   &--description {
     @extend .text-center;

@@ -32,7 +32,7 @@ function isActive(route: ROUTE_NAME) {
   <div class="s-TopNav" ref="nav">
     <div class="padded-space">
       <div class="menu-wrapper">
-        <RouterLink to="/">
+        <RouterLink to="/" @click="close">
           <h2>R.</h2>
         </RouterLink>
         <div class="menu-activator" @click="toggle">
@@ -44,34 +44,29 @@ function isActive(route: ROUTE_NAME) {
       <ul>
         <li>
           <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.MY_SKILLS) }"
-            to="/skills"
+            :class="{ active: isActive(ROUTE_NAME.CAREER) }"
+            to="/career"
+            @click="close"
           >
-            Skills
-          </RouterLink>
-        </li>
-        <li>
-          <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.HISTORY) }"
-            to="/history"
-          >
-            History
+            Career
           </RouterLink>
         </li>
         <li>
           <RouterLink
             :class="{ active: isActive(ROUTE_NAME.ACADEMIC) }"
             to="/academic"
+            @click="close"
           >
             Accomplishments
           </RouterLink>
         </li>
         <li>
           <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.CONTACTS) }"
-            to="/contacts"
+            :class="{ active: isActive(ROUTE_NAME.PROJECTS) }"
+            to="/projects"
+            @click="close"
           >
-            Contacts
+            Projects
           </RouterLink>
         </li>
       </ul>

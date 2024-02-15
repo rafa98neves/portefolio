@@ -23,18 +23,10 @@ function isActive(route: ROUTE_NAME) {
         </li>
         <li>
           <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.MY_SKILLS) }"
-            to="/skills"
+            :class="{ active: isActive(ROUTE_NAME.CAREER) }"
+            to="/career"
           >
-            Skills
-          </RouterLink>
-        </li>
-        <li>
-          <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.HISTORY) }"
-            to="/history"
-          >
-            History
+            Career
           </RouterLink>
         </li>
         <li>
@@ -47,10 +39,10 @@ function isActive(route: ROUTE_NAME) {
         </li>
         <li>
           <RouterLink
-            :class="{ active: isActive(ROUTE_NAME.CONTACTS) }"
-            to="/contacts"
+            :class="{ active: isActive(ROUTE_NAME.PROJECTS) }"
+            to="/projects"
           >
-            Contacts
+            Projects
           </RouterLink>
         </li>
       </ul>
@@ -73,7 +65,7 @@ function isActive(route: ROUTE_NAME) {
     width: 100%;
     padding: 0;
     display: inline-grid;
-    grid-template-columns: 1fr min-content min-content min-content min-content;
+    grid-template-columns: 1fr min-content min-content min-content;
     align-items: center;
     li {
       &:not(:last-of-type) {

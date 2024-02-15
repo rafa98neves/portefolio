@@ -2,11 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 
 export enum ROUTE_NAME {
   ABOUT_ME = "ABOUT_ME",
-  MY_SKILLS = "MY_SKILLS",
-  HISTORY = "HISTORY",
+  CAREER = "CAREER",
   ACADEMIC = "ACADEMIC",
   PROJECTS = "PROJECTS",
-  CONTACTS = "CONTACTS",
 }
 
 const router = createRouter({
@@ -19,15 +17,9 @@ const router = createRouter({
       component: () => import("../views/HomeView.vue"),
     },
     {
-      path: "/skills",
-      name: ROUTE_NAME.MY_SKILLS,
-      meta: { title: "Skills" },
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/history",
-      name: ROUTE_NAME.HISTORY,
-      meta: { title: "History" },
+      path: "/career",
+      name: ROUTE_NAME.CAREER,
+      meta: { title: "Career" },
       component: () => import("../views/HomeView.vue"),
     },
     {
@@ -40,12 +32,6 @@ const router = createRouter({
       path: "/projects",
       name: ROUTE_NAME.PROJECTS,
       meta: { title: "Projects" },
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/contacts",
-      name: ROUTE_NAME.CONTACTS,
-      meta: { title: "Contacts" },
       component: () => import("../views/HomeView.vue"),
     },
     {

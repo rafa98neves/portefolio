@@ -16,7 +16,7 @@ withDefaults(
 </template>
 
 <style lang="scss" scoped>
-$width-sm: 25rem;
+$width-sm: 23rem;
 $half-width-sm: 12.5rem;
 
 $width: 50rem;

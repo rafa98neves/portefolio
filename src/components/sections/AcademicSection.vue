@@ -76,7 +76,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 <style lang="scss" scoped>
 section {
   @extend .light-bg;
-  min-height: 20rem;
+  min-height: 25rem;
 
   :deep(a) {
     color: $color-1;

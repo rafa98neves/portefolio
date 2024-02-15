@@ -114,6 +114,11 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+
+    @include maxLG {
+      flex-direction: column;
+      gap: 0rem;
+    }
   }
 }
 </style>

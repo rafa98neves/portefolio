@@ -18,10 +18,8 @@ const router = useRouter();
 const route = useRoute();
 
 const greetingSection = ref<InstanceType<typeof GreetingSection> | null>();
-const expertiseSection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const historySection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const academicSection = ref<InstanceType<typeof AcademicSection> | null>();
-const contactsSection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const projectsSection = ref<InstanceType<typeof ProjectsSection> | null>();
 
 const sections = computed(() => [
@@ -31,13 +29,8 @@ const sections = computed(() => [
     visible: useElementVisibility(greetingSection),
   },
   {
-    ref: expertiseSection,
-    routeName: ROUTE_NAME.MY_SKILLS,
-    visible: useElementVisibility(expertiseSection),
-  },
-  {
     ref: historySection,
-    routeName: ROUTE_NAME.HISTORY,
+    routeName: ROUTE_NAME.CAREER,
     visible: useElementVisibility(historySection),
   },
   {
@@ -49,11 +42,6 @@ const sections = computed(() => [
     ref: projectsSection,
     routeName: ROUTE_NAME.PROJECTS,
     visible: useElementVisibility(projectsSection),
-  },
-  {
-    ref: contactsSection,
-    routeName: ROUTE_NAME.CONTACTS,
-    visible: useElementVisibility(contactsSection),
   },
 ]);
 
@@ -105,10 +93,10 @@ setTimeout(() => key.value++);
 <template>
   <div class="v-Home" :key="key">
     <GreetingSection ref="greetingSection" />
-    <ExpertiseSection ref="expertiseSection" class="py-10" />
+    <ExpertiseSection class="py-10" />
     <HistorySection ref="historySection" class="py-10" />
     <AcademicSection ref="academicSection" class="py-10" />
     <ProjectsSection ref="projectsSection" class="py-10" />
-    <ContactsSection ref="contactsSection" class="py-10" />
+    <ContactsSection class="py-10" />
   </div>
 </template>

@@ -14,7 +14,7 @@ const { isMD } = useViewport();
       <div class="s-Greeting--text">
         <h4>Hey, I am</h4>
         <h1>Rafael Neves</h1>
-        <h2 class="mb-8 pb-4">Frontend Developer</h2>
+        <h2 class="s-Greeting--subtitle">Frontend Developer</h2>
         <div class="text-light">
           Building amazing UI's, writing reliable code and creating awesome
           products.
@@ -43,6 +43,10 @@ section {
   height: 100%;
   justify-content: space-between;
   padding-top: 1rem;
+
+  &--subtitle {
+    margin-bottom: 2rem;
+  }
 
   @include maxLG {
     justify-content: center;

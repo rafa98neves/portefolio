@@ -10,14 +10,11 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "deploy": "git push heroku main",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "start": "serve -s dist",
-    "heroku-postbuild": "npm run build"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

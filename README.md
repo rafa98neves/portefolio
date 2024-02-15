@@ -1,46 +1,32 @@
-# portefolio
+# Rafael Neves
 
-This template should help get you started developing with Vue 3 in Vite.
+## Welcome to my portefolio!
 
-## Recommended IDE Setup
+Hey there! 👋
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+I'm Rafael Neves, a passionate Frontend Developer with a keen eye for design and a knack for creating engaging user experiences. With a background in building web application used by some of the biggest companies in the world, I bring a blend of technical expertise and creative flair to every project I undertake.
 
-## Type Support for `.vue` Imports in TS
+## Skills
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- **Programming Languages**: HTML, CSS, JavaScript, TypeScript
+- **Frameworks**: Vue.js, React
+- **UI/UX Design**: Figma
+- **Version Control**: Git, GitHub
+- **Responsive Design**: Bootstrap, CSS Grid, Flexbox
+- **Testing/Debugging**: Chrome DevTools, Jest, Datadog E2E
+- **Package Managers**: npm, yarn
+- **Build Tools**: Webpack, Vite
+- **Other Tools**: VSCode
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Contact Me
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Have a project in mind or just want to chat?
+Feel free to reach out to me via email at `neves98rafael@gmail.com` or connect with me on [[LinkedIn](https://www.linkedin.com/in/neves98rafael/) | [Twitter](https://twitter.com/rafa98neves) | [GitHub](https://github.com/rafa98neves)].
 
-## Customize configuration
+## Run locally
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+To run the app a simple `npm i` followed by a `npm run dev` should do the trick!
 
-## Project Setup
+Thanks,
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+**Rafael Neves**

@@ -9,7 +9,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       <h3 class="text-center mb-10">My Accomplishments</h3>
       <HistoryCard
         class="my-10"
-        image="public/images/uc.webp"
+        image="/images/uc.webp"
         background-color="rgba(255, 255, 255, 1)"
         placement="left"
       >
@@ -45,7 +45,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       </HistoryCard>
       <HistoryCard
         class="mt-10"
-        image="public/images/music.jpeg"
+        image="/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
       >
         <div class="s-Academic--text">

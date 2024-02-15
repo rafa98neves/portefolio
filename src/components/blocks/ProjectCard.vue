@@ -34,7 +34,7 @@ function redirect() {
       </button>
     </div>
     <div class="c-ProjectCard--image">
-      <img :src="`public/images/${file}`" />
+      <img :src="`/images/${file}`" />
     </div>
   </div>
 </template>

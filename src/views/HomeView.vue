@@ -6,7 +6,7 @@ import HistorySection from "@/components/sections/HistorySection.vue";
 import ContactsSection from "@/components/sections/ContactsSection.vue";
 import ProjectsSection from "@/components/sections/ProjectsSection.vue";
 import { computed, onBeforeMount, onBeforeUnmount, ref, watch } from "vue";
-import { useElementVisibility } from "@vueuse/core";
+import { useElementVisibility, useIntersectionObserver } from "@vueuse/core";
 import { useRoute, useRouter } from "vue-router";
 import { ROUTE_NAME } from "@/router";
 import { debounce } from "lodash";
@@ -21,6 +21,8 @@ const greetingSection = ref<InstanceType<typeof GreetingSection> | null>();
 const historySection = ref<InstanceType<typeof ExpertiseSection> | null>();
 const academicSection = ref<InstanceType<typeof AcademicSection> | null>();
 const projectsSection = ref<InstanceType<typeof ProjectsSection> | null>();
+
+const internalRouteChange = ref(false);
 
 const sections = computed(() => [
   {
@@ -49,7 +51,7 @@ watch(
   () => route.name,
   async () => {
     const section = sections.value.find((s) => s.routeName === route.name);
-    if (section && !section.visible.value) {
+    if (section && !internalRouteChange.value) {
       section.ref.value?.$el.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -69,14 +71,15 @@ watch(
 
 onBeforeMount(() => {
   routeChangeDebounce = debounce(() => {
-    let currentRoute: ROUTE_NAME | null = null;
-    sections.value.forEach((s) => {
-      if (s.visible.value) currentRoute = s.routeName;
-    });
-    if (currentRoute) {
-      router.replace({ name: currentRoute });
+    internalRouteChange.value = true;
+    const visibleSections = sections.value.filter((s) => s.visible.value);
+    if (visibleSections.length === 1) {
+      router.replace({ name: visibleSections[0].routeName });
+    } else if (visibleSections.length === 3) {
+      router.replace({ name: visibleSections[1].routeName });
     }
-  }, 200);
+    setTimeout(() => (internalRouteChange.value = false));
+  }, 100);
 });
 
 onBeforeUnmount(() => (routeChangeDebounce = null));

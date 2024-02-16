@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "@/views/HomeView.vue";
 
 export enum ROUTE_NAME {
   ABOUT_ME = "ABOUT_ME",
@@ -12,27 +13,32 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: ROUTE_NAME.ABOUT_ME,
-      meta: { title: "Portefolio" },
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/career",
-      name: ROUTE_NAME.CAREER,
-      meta: { title: "Career" },
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/academic",
-      name: ROUTE_NAME.ACADEMIC,
-      meta: { title: "Accomplisments" },
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/projects",
-      name: ROUTE_NAME.PROJECTS,
-      meta: { title: "Projects" },
-      component: () => import("../views/HomeView.vue"),
+      children: [
+        {
+          path: "",
+          name: ROUTE_NAME.ABOUT_ME,
+          meta: { title: "Portefolio" },
+          component: HomeView,
+        },
+        {
+          path: "career",
+          name: ROUTE_NAME.CAREER,
+          meta: { title: "Career" },
+          component: HomeView,
+        },
+        {
+          path: "academic",
+          name: ROUTE_NAME.ACADEMIC,
+          meta: { title: "Accomplisments" },
+          component: HomeView,
+        },
+        {
+          path: "projects",
+          name: ROUTE_NAME.PROJECTS,
+          meta: { title: "Projects" },
+          component: HomeView,
+        },
+      ],
     },
     {
       path: "/:catchAll(.*)",

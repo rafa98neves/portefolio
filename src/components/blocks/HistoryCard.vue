@@ -80,7 +80,7 @@ const commonBinds = computed(() => ({
   img {
     width: min(100%, 13rem);
     aspect-ratio: 1 / 1;
-    object-fit: cover;
+    object-fit: scale-down;
     margin: 1rem;
     border-radius: 50%;
   }

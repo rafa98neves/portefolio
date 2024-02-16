@@ -23,6 +23,12 @@ import { PROJECTS } from "@/constants/text";
 <style lang="scss" scoped>
 section {
   @extend .dark-bg;
+  background: linear-gradient(
+    180deg,
+    $color-4 0%,
+    $color-4 50%,
+    $color-11 100%
+  );
 
   .s-Projects {
     &--wrapper {

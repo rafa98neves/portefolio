@@ -53,18 +53,27 @@ export const HISTORY_TEXT = {
 
 export const ACADEMIC_TEXT = {
   MASTERS: {
-    HEADER: `MSc in Software Engineering`,
+    HEADER: `<h3>MSc in Software Engineering</h3>`,
+    SUBHEADER: `2019 - 2021 | FCTUC Portugal`,
     TEXT: [
-      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to ma`,
+      `After completing my three-year Bachelor's degree in Software Engineering, 
+      I pursued a Master's degree in the same field. Here, I deepened my understanding 
+      of key coding concepts and gained valuable hands-on experience by working with a 
+      tech company to develop my first production app. This experience was pivotal in 
+      shaping my career trajectory and solidifying my passion for software engineering.`,
     ],
-    CHIPS: [],
   },
   UNIVERSITY: {
-    HEADER: `Bachelor's in Informatics Engineering`,
+    HEADER: `<h3>Bachelor's in Informatics Engineering</h3>`,
+    SUBHEADER: `2016 - 2018 | FCTUC Portugal`,
     TEXT: [
-      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make`,
+      `I embarked on my software development journey in Coimbra, where I immersed myself
+        in the dynamic world of coding. Over the span of three enriching years at FCTUC,
+        I delved deep into the intricacies of algorithms, grasped fundamental code concepts, 
+        and acquired a versatile set of tools essential for shaping my path as a successful software developer.
+        This period of rigorous learning not only equipped me with technical prowess but also instilled in me 
+        the resilience and determination required to navigate the complexities of the software development landscape with confidence.`,
     ],
-    CHIPS: [],
   },
   MUSIC: {
     HEADER: `Journey of a Musician-Turned-Engineer`,

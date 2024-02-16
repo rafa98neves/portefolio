@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import HistoryCard from "../blocks/HistoryCard.vue";
+import GeoFigure from "../atoms/GeoFigure.vue";
 import Chip from "../atoms/Chip.vue";
 import { ACADEMIC_TEXT } from "@/constants/text";
 </script>
@@ -7,6 +8,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
   <section>
     <div class="s-Academic padded-space">
       <h3 class="text-center mb-10">My Accomplishments</h3>
+      <GeoFigure pos="bottom-right" color="dark" />
       <HistoryCard
         class="my-10"
         image="/images/uc.webp"
@@ -15,17 +17,13 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       >
         <div class="s-Academic--text">
           <div
-            class="s-Academic--text-header mb-4"
-            v-html="ACADEMIC_TEXT.MASTERS.HEADER"
+            class="s-Academic--text-header"
+            v-html="ACADEMIC_TEXT.UNIVERSITY.HEADER"
           />
-
-          <div v-for="text in ACADEMIC_TEXT.MASTERS.TEXT">
-            <span v-html="text" />
-          </div>
-
-          <div class="mt-6 mb-4">
-            <b> {{ ACADEMIC_TEXT.UNIVERSITY.HEADER }}</b>
-          </div>
+          <div
+            class="s-Academic--text-subheader mb-4"
+            v-html="ACADEMIC_TEXT.UNIVERSITY.SUBHEADER"
+          />
 
           <div v-for="text in ACADEMIC_TEXT.UNIVERSITY.TEXT">
             <span v-html="text" />
@@ -33,10 +31,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 
           <div class="mt-4">
             <Chip
-              v-for="chip in [
-                ...ACADEMIC_TEXT.MASTERS.CHIPS,
-                ...ACADEMIC_TEXT.UNIVERSITY.CHIPS,
-              ]"
+              v-for="chip in ACADEMIC_TEXT.UNIVERSITY.CHIPS"
               class="s-Academic--chipContainer"
               :label="chip"
             />
@@ -44,9 +39,30 @@ import { ACADEMIC_TEXT } from "@/constants/text";
         </div>
       </HistoryCard>
       <HistoryCard
+        class="my-10"
+        image="/images/fctuc.png"
+        background-color="rgba(255, 255, 255, 1)"
+      >
+        <div class="s-Academic--text">
+          <div
+            class="s-Academic--text-header"
+            v-html="ACADEMIC_TEXT.MASTERS.HEADER"
+          />
+          <div
+            class="s-Academic--text-subheader mb-4"
+            v-html="ACADEMIC_TEXT.MASTERS.SUBHEADER"
+          />
+
+          <div v-for="text in ACADEMIC_TEXT.MASTERS.TEXT">
+            <span v-html="text" />
+          </div>
+        </div>
+      </HistoryCard>
+      <HistoryCard
         class="mt-10"
         image="/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
+        placement="left"
       >
         <div class="s-Academic--text">
           <div class="s-Academic--text-header">
@@ -58,14 +74,6 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 
           <div v-for="text in ACADEMIC_TEXT.MUSIC.TEXT">
             <span v-html="text" />
-          </div>
-
-          <div class="mt-4">
-            <Chip
-              v-for="chip in ACADEMIC_TEXT.MUSIC.CHIPS"
-              class="s-Academic--chipContainer"
-              :label="chip"
-            />
           </div>
         </div>
       </HistoryCard>

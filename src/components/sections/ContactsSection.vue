@@ -9,7 +9,7 @@ function goToTop() {
     <div class="s-Contacts padded-space">
       <div class="font-weight-bold text-center">
         Are you prepared to turn your extraordinary
-        <span class="font-weight-bold text-warning"> idea </span> <br />
+        <span class="font-weight-bold text-warning"> idea </span>
         into an exceptional
         <span class="font-weight-bold text-warning"> product</span>?
       </div>
@@ -48,7 +48,7 @@ function goToTop() {
 
 <style lang="scss" scoped>
 section {
-  @extend .dark-bg;
+  @extend .darker-bg;
   min-height: auto;
   height: auto;
   overflow: hidden;

@@ -3,8 +3,12 @@ import { RouterView } from "vue-router";
 import TopNav from "@/components/sections/TopNav.vue";
 import TopNavSM from "@/components/sections/TopNavSM.vue";
 import { useViewport } from "./composables/layout";
+import { onMounted } from "vue";
+import { event } from "vue-gtag";
 
 const { isMD } = useViewport();
+
+onMounted(() => event("open-app"));
 </script>
 
 <template>

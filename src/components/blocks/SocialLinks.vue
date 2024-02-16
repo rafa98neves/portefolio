@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { event } from "vue-gtag";
+
 const props = withDefaults(
   defineProps<{
     horizontal?: boolean;
@@ -8,6 +10,7 @@ const props = withDefaults(
 );
 
 function open(link: string) {
+  event("social-link-click", { to: link });
   window.open(link);
 }
 

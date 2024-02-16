@@ -17,7 +17,7 @@ const { isMD } = useViewport();
 const styledWidth = computed(() => (isMD.value ? "100%" : props.width));
 
 function redirect() {
-  event("redirect", { to: props.redirect });
+  event("project-click", { to: props.redirect });
   window.open(props.redirect, "_blank");
 }
 </script>

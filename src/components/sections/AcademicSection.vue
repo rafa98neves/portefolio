@@ -28,14 +28,6 @@ import { ACADEMIC_TEXT } from "@/constants/text";
           <div v-for="text in ACADEMIC_TEXT.UNIVERSITY.TEXT">
             <span v-html="text" />
           </div>
-
-          <div class="mt-4">
-            <Chip
-              v-for="chip in ACADEMIC_TEXT.UNIVERSITY.CHIPS"
-              class="s-Academic--chipContainer"
-              :label="chip"
-            />
-          </div>
         </div>
       </HistoryCard>
       <HistoryCard
@@ -74,6 +66,14 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 
           <div v-for="text in ACADEMIC_TEXT.MUSIC.TEXT">
             <span v-html="text" />
+          </div>
+
+          <div class="mt-4">
+            <Chip
+              v-for="chip in ACADEMIC_TEXT.MUSIC.CHIPS"
+              class="s-Academic--chipContainer"
+              :label="chip"
+            />
           </div>
         </div>
       </HistoryCard>

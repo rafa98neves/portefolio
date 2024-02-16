@@ -5,6 +5,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
+import VueGtag from "vue-gtag";
 import { MotionPlugin } from "@vueuse/motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -51,8 +52,12 @@ library.add(
 const app = createApp(App);
 
 app.use(MotionPlugin);
-
 app.use(router);
+app.use(VueGtag, {
+  appName: "My Portefolio",
+  pageTrackerScreenviewEnabled: true,
+  config: { id: import.meta.env.VITE_MEASUREMENT_ID },
+});
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 

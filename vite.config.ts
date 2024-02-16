@@ -6,11 +6,11 @@ import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   const cwd = process.cwd();
-  const env = { ...loadEnv(mode, cwd, "") };
+  const env = { ...loadEnv(mode, cwd, "VITE_") };
 
   return {
     plugins: [vue()],
-    server: { port: Number(env?.PORT ?? 3000) },
+    server: { port: Number(env?.VITE_PORT ?? 3000) },
     css: {
       preprocessorOptions: {
         scss: {

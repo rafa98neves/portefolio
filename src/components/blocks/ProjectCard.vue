@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useViewport } from "@/composables/layout";
 import { computed } from "vue";
+import { event } from "vue-gtag";
 
 const props = defineProps<{
   title: string;
@@ -16,6 +17,7 @@ const { isMD } = useViewport();
 const styledWidth = computed(() => (isMD.value ? "100%" : props.width));
 
 function redirect() {
+  event("redirect", { to: props.redirect });
   window.open(props.redirect, "_blank");
 }
 </script>

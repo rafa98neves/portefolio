@@ -53,11 +53,14 @@ const app = createApp(App);
 
 app.use(MotionPlugin);
 app.use(router);
-app.use(VueGtag, {
-  appName: "My Portefolio",
-  pageTrackerScreenviewEnabled: true,
-  config: { id: import.meta.env.VITE_MEASUREMENT_ID },
-});
+
+if (import.meta.env.VITE_ENV === "production") {
+  app.use(VueGtag, {
+    appName: "My Portefolio",
+    pageTrackerScreenviewEnabled: true,
+    config: { id: import.meta.env.VITE_MEASUREMENT_ID },
+  });
+}
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 

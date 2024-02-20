@@ -14,6 +14,7 @@ import { PROJECTS } from "@/constants/text";
           :text="description"
           :file="file"
           :redirect="redirectTo"
+          :alt="title"
         />
       </div>
     </div>

@@ -12,8 +12,9 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       <HistoryCard
         class="my-10"
         image="/images/uc.webp"
-        background-color="rgba(255, 255, 255, 1)"
+        background-color="rgba(255, 255, 255, 0.9)"
         placement="left"
+        alt="Coimbra's University Logo"
       >
         <div class="s-Academic--text">
           <div
@@ -33,7 +34,8 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       <HistoryCard
         class="my-10"
         image="/images/fctuc.png"
-        background-color="rgba(255, 255, 255, 1)"
+        background-color="rgba(255, 255, 255, 0.9)"
+        alt="FCTUC Logo"
       >
         <div class="s-Academic--text">
           <div
@@ -55,6 +57,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
         image="/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
         placement="left"
+        alt="Me, saxophone, soulful music."
       >
         <div class="s-Academic--text">
           <div class="s-Academic--text-header">
@@ -95,6 +98,7 @@ section {
     display: inline-block;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
+    font-weight: 600;
   }
   .s-Academic--text {
     color: $color-5;

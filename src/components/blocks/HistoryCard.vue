@@ -8,6 +8,7 @@ const props = withDefaults(
     backgroundColor: string;
     color?: string;
     placement?: "left" | "right";
+    alt?: string;
   }>(),
   {
     placement: "right",
@@ -53,14 +54,14 @@ const commonBinds = computed(() => ({
       v-if="placement === 'right'"
       v-bind="commonBinds"
     >
-      <img :src="image" />
+      <img :alt="alt" :src="image" />
       <div class="c-HistoryCard--text">
         <slot />
       </div>
     </div>
 
     <div v-else v-motion-slide-visible-right v-bind="commonBinds">
-      <img :src="image" />
+      <img :alt="alt" :src="image" />
       <div class="c-HistoryCard--text">
         <slot />
       </div>

@@ -29,6 +29,7 @@ import {
   faReact,
   faAngular,
 } from "@fortawesome/free-brands-svg-icons";
+import { createHead } from "@vueuse/head";
 
 library.add(
   faEnvelope,
@@ -53,6 +54,7 @@ const app = createApp(App);
 
 app.use(MotionPlugin);
 app.use(router);
+app.use(createHead());
 
 if (import.meta.env.VITE_ENV === "production") {
   app.use(VueGtag, {

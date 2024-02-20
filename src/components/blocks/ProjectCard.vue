@@ -10,6 +10,7 @@ const props = defineProps<{
 
   redirect?: string;
   width?: string;
+  alt?: string;
 }>();
 
 const { isMD } = useViewport();
@@ -36,7 +37,7 @@ function redirect() {
       </button>
     </div>
     <div class="c-ProjectCard--image">
-      <img :src="`/images/${file}`" />
+      <img :alt="alt" :src="`/images/${file}`" />
     </div>
   </div>
 </template>

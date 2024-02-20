@@ -1,7 +1,7 @@
 export const HISTORY_TEXT = {
   UNBABEL: {
     HEADER: `<h3>Unbabel</h3> Seamless Multilingual Translation Services`,
-    SUBHEADER: `2022 - Present | Lisbon`,
+    SUBHEADER: `2023 - Present | Lisbon`,
     TEXT: [
       `I've been with<a href="https://unbabel.com" target="_blank"> Unbabel </a>since August 2022,
         serving as the lead frontend developer for a key tech cluster. On a daily basis, I develop UIs
@@ -18,7 +18,7 @@ export const HISTORY_TEXT = {
   },
   GRAMA: {
     HEADER: "<h3>Grama</h3> My Formative Years in Tech",
-    SUBHEADER: `2020 - 2022 | Coimbra`,
+    SUBHEADER: `2020 - 2023 | Coimbra`,
     TEXT: [
       `I embarked on my professional journey as a software developer at the tech startup 
         <a href='https://grama.io' target='_blank'>Grama</a>. 
@@ -39,7 +39,7 @@ export const HISTORY_TEXT = {
   },
   PLUG: {
     HEADER: `<h3>Plug Events</h3> Unique online spaces for all interests and places.`,
-    SUBHEADER: `2022 - 2023 | Irland`,
+    SUBHEADER: `2022 - 2023 | Ireland`,
     TEXT: [
       `I served as a part-time contributor to a close-knit team of developers, collaborating
         on the development and maintenance of a web application known as 

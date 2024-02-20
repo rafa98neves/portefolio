@@ -21,7 +21,7 @@ const { isMD } = useViewport();
         </div>
       </div>
       <div class="s-Greeting--image" v-motion-fade-visible>
-        <img src="/images/me-1.png" />
+        <img alt="Rafael Neves" src="/images/me-1.png" />
       </div>
       <SocialLinks v-if="!isMD" />
       <ExperienceChip class="s-Greeting--chip" />

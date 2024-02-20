@@ -11,6 +11,7 @@ import { HISTORY_TEXT } from "@/constants/text";
         class="my-10"
         image="/images/unbabel.png"
         background-color="rgba(56, 67, 208, 1)"
+        alt="Unbabel Logo"
       >
         <div>
           <div
@@ -38,6 +39,7 @@ import { HISTORY_TEXT } from "@/constants/text";
         image="/images/grama.jpeg"
         background-color="rgba(0, 0, 0, 1)"
         placement="left"
+        alt="Grama Logo"
       >
         <div>
           <div
@@ -66,6 +68,7 @@ import { HISTORY_TEXT } from "@/constants/text";
         class="mt-10"
         image="/images/plug.png"
         background-color="rgb(92, 105, 230, 1)"
+        alt="Plug Events Logo"
       >
         <div>
           <div
@@ -108,6 +111,7 @@ section {
     display: inline-block;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
+    font-weight: 600;
   }
 
   .s-History--text-header {

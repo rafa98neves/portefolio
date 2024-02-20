@@ -5,8 +5,21 @@ import TopNavSM from "@/components/sections/TopNavSM.vue";
 import { useViewport } from "./composables/layout";
 import { onMounted } from "vue";
 import { event } from "vue-gtag";
+import { useHead } from "@vueuse/head";
 
 const { isMD } = useViewport();
+
+useHead({
+  // Can be static or computed
+  title: "Rafael Neves | Portefolio",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Explore my portfolio to delve deeper into my journey as a frontend developer and discover the projects that showcase my skills and passion.",
+    },
+  ],
+});
 
 onMounted(() => event("open-app"));
 </script>

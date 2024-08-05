@@ -10,8 +10,8 @@ export const HISTORY_TEXT = {
     CHIPS: [
       "Vue 2",
       "Vue 3",
-      "E2E Datadog",
-      "Jest",
+      "E2E Testing",
+      "Unit Testing",
       "Javascript",
       "TypeScript",
     ],
@@ -91,40 +91,42 @@ export const ACADEMIC_TEXT = {
 export const PROJECTS = [
   {
     title: "Unbabel Portal",
-    description: `Portal is the customer-facing product of Unbabel, giving customer service
+    text: `Portal is the customer-facing product of Unbabel, giving customer service
     teams an easy way to manage language operations and optimize customer experience over time`,
     file: "unbabel-2.png",
-    redirectTo:
+    redirect:
       "https://unbabel.com/sv/introducing-the-unbabel-portal-a-new-way-to-manage-customer-service-language-operations/",
+    full: true,
   },
   {
-    title: "ALT21 - X-Hedge",
-    description: `X-Hedge is a pioneering platform enabling businesses to provide customized currency 
+    title: "X-Hedge",
+    text: `X-Hedge is a pioneering platform enabling businesses to provide customized currency 
       hedging solutions under their own brand.`,
     file: "x-hedge.png",
-    redirectTo: "https://www.alt21.com/x-hedge/",
-    width: "40%",
-  },
-  {
-    title: "Plug Events",
-    description: `Plug Events is a dynamic platform designed for artists, simplifying the process of finding and creating events
-      while fostering seamless connections within the artistic community.`,
-    file: "plug-events.png",
-    redirectTo: "https://www.plug.events/space/_/_/events",
-    width: "40%",
+    redirect: "https://www.alt21.com/x-hedge/",
   },
   {
     title: "My Portefolio",
-    description: `My portfolio not only offers insights into who I am but also serves as a showcase of my coding skills.
+    text: `My portfolio not only offers insights into who I am but also serves as a showcase of my coding skills.
       Feel free to explore my GitHub repository to delve into my coding projects and methodologies.`,
-    file: "Portefolio.png",
-    redirectTo: "https://github.com/rafa98neves/portefolio",
+    file: "portefolio.png",
+    redirect: "https://rafa98neves.github.io/#/",
+    code: "https://github.com/rafa98neves/portefolio",
+    full: true,
   },
   {
     title: "Sala-Z",
-    description: `Sala-Z is a web application designed to manage musical venues, offering a straightforward 
+    text: `Sala-Z is a web application designed to manage musical venues, offering a straightforward 
       and intuitive platform for handling multiple events. (Currently undergoing maintenance)`,
     file: "salaz.jpeg",
-    redirectTo: "https://www.grama.io/work/sala-z.html",
+    redirect: "https://www.grama.io/work/sala-z.html",
+    full: true,
+  },
+  {
+    title: "Plug Events",
+    text: `Plug Events is a dynamic platform designed for artists, simplifying the process of finding and creating events
+      while fostering seamless connections within the artistic community.`,
+    file: "plug-events.png",
+    redirect: "https://www.plug.events/space/_/_/events",
   },
 ];

@@ -1,9 +1,10 @@
 body,
 html {
-  @extend .medium-bg;
+  @extend .dark-bg;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+
 }
 
 .padded-space {
@@ -11,10 +12,12 @@ html {
   max-width: $max-page-width;
   margin-left: auto;
   margin-right: auto;
-
-  @include maxLG {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  
+  @include maxMD {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -27,4 +30,9 @@ ul {
 section {
   position: relative;
   min-height: 95vh;
+}
+
+#loom-companion-mv3,
+#shadow-host-companion {
+  display: none;
 }

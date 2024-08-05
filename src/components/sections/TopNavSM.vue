@@ -33,7 +33,7 @@ function isActive(route: ROUTE_NAME) {
     <div class="padded-space">
       <div class="menu-wrapper">
         <RouterLink to="/" @click="close">
-          <h2>R.</h2>
+          <h2 class="shadowless">R.</h2>
         </RouterLink>
         <div class="menu-activator" @click="toggle">
           <font-awesome-icon :icon="['fas', 'bars']" />
@@ -77,11 +77,11 @@ function isActive(route: ROUTE_NAME) {
 
 <style lang="scss" scoped>
 .s-TopNav {
-  @extend .dark-bg;
   z-index: 6;
   position: fixed;
   inset: 0;
   height: 4rem;
+  background-color: $secondary--bg;
 
   .menu-wrapper {
     height: 100%;
@@ -90,8 +90,7 @@ function isActive(route: ROUTE_NAME) {
     justify-content: space-between;
 
     h2 {
-      color: $color-1;
-      text-shadow: 2px 2px $color-2;
+      color: $pure--white;
     }
 
     .menu-activator {
@@ -101,8 +100,9 @@ function isActive(route: ROUTE_NAME) {
   }
 
   .menu {
-    @extend .dark-bg;
     width: 100%;
+    background-color: $secondary--bg;
+
     ul {
       margin-top: -1rem;
       height: 100%;
@@ -110,10 +110,10 @@ function isActive(route: ROUTE_NAME) {
         padding: 2rem 1rem;
         text-align: center;
         a {
-          color: $color-1;
+          color: $pure--white;
           font-weight: 400;
           &.active {
-            color: $color-2;
+            color: $highlight;
             font-weight: 700;
           }
         }

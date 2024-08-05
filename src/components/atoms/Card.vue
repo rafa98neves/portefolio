@@ -1,18 +1,31 @@
 <script setup lang="ts">
-defineProps<{ title?: string; icons?: string[] }>();
+const props = defineProps<{
+  title?: string;
+  icons?: string[];
+  clickable?: boolean;
+}>();
+
+const emits = defineEmits(["click"]);
+
+const onClick = () => {
+  if (props.clickable) {
+    emits("click");
+  }
+};
 </script>
 
 <template>
-  <div class="c-Card" v-motion-fade-visible :delay="100">
+  <div class="c-Card" v-motion-fade-visible :delay="400" @click="onClick">
     <font-awesome-icon
       v-for="(icon, index) in icons"
       :icon="icon"
       class="c-Card--icon"
       :class="`icon-${index + 1}`"
     />
+
     <div class="c-Card--header">
       <slot name="title">
-        <h3>{{ title }}</h3>
+        <h3 class="text-center shadowless">{{ title }}</h3>
       </slot>
     </div>
 
@@ -27,14 +40,10 @@ defineProps<{ title?: string; icons?: string[] }>();
   display: grid;
   position: relative;
   grid-template-rows: min-content 1fr;
-  border: 1px solid $color-2;
   border-radius: 1rem;
-  background-color: $color-1;
-  box-shadow: 0px 0px 5px 1px $color-2;
+  background-color: $secondary--bg;
+  box-shadow: 0px 0px 2rem $pure--dark;
   padding: 1rem 1rem 2rem 1rem;
-  h3 {
-    text-align: center;
-  }
 
   &--icon {
     position: absolute;

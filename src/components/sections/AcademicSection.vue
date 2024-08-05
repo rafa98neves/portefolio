@@ -1,16 +1,15 @@
 <script lang="ts" setup>
 import HistoryCard from "../blocks/HistoryCard.vue";
-import GeoFigure from "../atoms/GeoFigure.vue";
 import Chip from "../atoms/Chip.vue";
 import { ACADEMIC_TEXT } from "@/constants/text";
 </script>
+
 <template>
   <section>
     <div class="s-Academic padded-space">
-      <h3 class="text-center mb-10">My Accomplishments</h3>
-      <GeoFigure pos="bottom-right" color="dark" />
+      <h3 class="text-center">My Accomplishments</h3>
       <HistoryCard
-        class="my-10"
+        class="my-2"
         image="/images/uc.webp"
         background-color="rgba(255, 255, 255, 0.9)"
         placement="left"
@@ -26,13 +25,16 @@ import { ACADEMIC_TEXT } from "@/constants/text";
             v-html="ACADEMIC_TEXT.UNIVERSITY.SUBHEADER"
           />
 
-          <div v-for="text in ACADEMIC_TEXT.UNIVERSITY.TEXT">
+          <div
+            class="s-Academic--text-body"
+            v-for="text in ACADEMIC_TEXT.UNIVERSITY.TEXT"
+          >
             <span v-html="text" />
           </div>
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-10"
+        class="my-2"
         image="/images/fctuc.png"
         background-color="rgba(255, 255, 255, 0.9)"
         alt="FCTUC Logo"
@@ -47,11 +49,15 @@ import { ACADEMIC_TEXT } from "@/constants/text";
             v-html="ACADEMIC_TEXT.MASTERS.SUBHEADER"
           />
 
-          <div v-for="text in ACADEMIC_TEXT.MASTERS.TEXT">
+          <div
+            class="s-Academic--text-body"
+            v-for="text in ACADEMIC_TEXT.MASTERS.TEXT"
+          >
             <span v-html="text" />
           </div>
         </div>
       </HistoryCard>
+
       <HistoryCard
         class="mt-10"
         image="/images/music.jpeg"
@@ -63,11 +69,15 @@ import { ACADEMIC_TEXT } from "@/constants/text";
           <div class="s-Academic--text-header">
             <b> {{ ACADEMIC_TEXT.MUSIC.HEADER }}</b>
           </div>
+
           <div class="s-Academic--text-subheader mb-4">
             {{ ACADEMIC_TEXT.MUSIC.SUBHEADER }}
           </div>
 
-          <div v-for="text in ACADEMIC_TEXT.MUSIC.TEXT">
+          <div
+            class="s-Academic--text-body"
+            v-for="text in ACADEMIC_TEXT.MUSIC.TEXT"
+          >
             <span v-html="text" />
           </div>
 
@@ -86,27 +96,26 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 
 <style lang="scss" scoped>
 section {
-  @extend .light-bg;
   min-height: 25rem;
 
   :deep(a) {
-    color: $color-1;
+    color: $pure--white;
     font-weight: 600;
   }
 
-  .s-Academic--chipContainer {
-    display: inline-block;
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
-  }
-  .s-Academic--text {
-    color: $color-5;
-    :deep(a) {
-      color: $color-5 !important;
+  .s-Academic {
+    &--chipContainer {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
     }
-    &-header {
+    &--text-header {
       display: inline-flex;
+    }
+
+    &--text-body {
+      color: $grey;
     }
   }
 }

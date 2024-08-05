@@ -25,10 +25,9 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
 .c-ExperienceChip {
   z-index: 4;
   display: flex;
-  border: 1px solid $color-1;
   border-radius: 25px;
-  background-color: $color-1;
-  box-shadow: 0px 0px 5px 1px $color-2;
+  background-color: $secondary--bg;
+  box-shadow: 0px 0px 1rem $pure--dark;
 
   @include maxLG {
     flex-wrap: wrap;
@@ -40,19 +39,20 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
     padding: 0.3rem 2rem;
     margin: 1rem 0;
     text-align: center;
-    color: $color-3;
+
     @include maxLG {
       margin: 0.5rem 0;
       width: 100%;
     }
+
     b {
       font-size: 1.2rem;
       font-weight: 700;
-      color: $color-4;
       display: block;
     }
+
     &:not(:last-child) {
-      border-right: 1px solid $color-2;
+      border-right: 1px solid $highlight;
       @include maxLG {
         border: none;
       }

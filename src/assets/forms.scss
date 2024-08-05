@@ -1,18 +1,18 @@
 input,
 textarea {
-  background-color: $color-1;
+  background-color: $pure--white;
   width: 100%;
   padding: 1rem 2rem;
-  border: 1px solid $color-3;
+  border: 1px solid $dark--highlight;
   border-radius: 14px;
 
   &:focus,
   &:active {
-    outline: 1px solid $color-3;
+    outline: 1px solid $dark--highlight;
   }
 
   &::placeholder {
-    color: $color-9;
+    color: $grey;
   }
 }
 
@@ -21,9 +21,9 @@ textarea {
 }
 
 button {
-  color: $color-1;
-  background-color: $color-4;
-  border: 1px solid $color-4;
+  color: $pure--white;
+  background-color: $main--bg;
+  border: 1px solid $main--bg;
   border-radius: 20px;
   padding: 1rem 2rem;
   display: flex;
@@ -31,22 +31,22 @@ button {
 
   &:hover {
     outline: 2px solid;
-    outline-color: $color-4;
+    outline-color: $main--bg;
   }
 
   &.btn-light {
-    background-color: $color-3;
-    border: 1px solid $color-3;
+    background-color: $dark--highlight;
+    border: 1px solid $dark--highlight;
     &:hover {
-      outline-color: $color-3;
+      outline-color: $dark--highlight;
     }
   }
 
   &.btn-warning {
-    background-color: $color-6;
-    border: 1px solid $color-6;
+    background-color: $call--to-action;
+    border: 1px solid $call--to-action;
     &:hover {
-      outline-color: $color-1;
+      outline-color: $pure--white;
     }
   }
 
@@ -56,6 +56,6 @@ button {
   }
 
   svg {
-    fill: $color-1;
+    fill: $pure--white;
   }
 }

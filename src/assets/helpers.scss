@@ -1,32 +1,21 @@
 // Colors
 
-.light-bg {
-  background-color: $color-8;
-  color: $color-4;
-}
-
-.medium-bg {
-  background-color: $color-2;
-  color: $color-1;
-}
-
-.medium-2-bg {
-  background-color: $color-3;
-  color: $color-1;
-}
-
 .dark-bg {
-  background-color: $color-4;
-  color: $color-1;
-}
-
-.darker-bg {
-  background-color: $color-11;
-  color: $color-1;
+  background-color: $main--bg;
+  color: $pure--white;
 }
 
 // Layout
 
 .text-center {
   text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.shadowless {
+  box-shadow: none;
+  text-shadow: none;
 }

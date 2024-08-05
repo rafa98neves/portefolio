@@ -72,13 +72,14 @@ const commonAnimationBind = (delay = 100) => {
     display: block;
     cursor: pointer;
     font-size: 1.8rem;
-    color: $color-10;
+    color: $pure--white;
+    box-shadow: 0px 0px 10rem $highlight;
   }
 
   &:not(.horizontal) {
     position: fixed;
     right: 2.5rem;
-    height: 20vh;
+    height: 30vh;
     display: grid;
 
     &:hover {
@@ -97,9 +98,10 @@ const commonAnimationBind = (delay = 100) => {
     align-items: center;
     justify-content: space-around;
     text-align: center;
+
     .c-SocialLinks--icon {
       display: inline-flex;
-      color: $color-2;
+      color: $highlight;
       position: relative;
 
       &:hover {

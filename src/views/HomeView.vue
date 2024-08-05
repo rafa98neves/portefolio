@@ -95,11 +95,22 @@ setTimeout(() => key.value++);
 
 <template>
   <div class="v-Home" :key="key">
+    <div class="v-Home--bg" />
     <GreetingSection ref="greetingSection" />
-    <ExpertiseSection class="py-10" />
-    <HistorySection ref="historySection" class="py-10" />
-    <AcademicSection ref="academicSection" class="py-10" />
-    <ProjectsSection ref="projectsSection" class="py-10" />
-    <ContactsSection class="py-10" />
+    <ExpertiseSection class="pt-10 pb-5" />
+    <HistorySection ref="historySection" />
+    <AcademicSection ref="academicSection" />
+    <ProjectsSection ref="projectsSection" />
+    <ContactsSection class="pt-14 pb-10" />
   </div>
 </template>
+
+
+<style lang="scss" scoped>
+.v-Home {
+  position: relative;
+  background-image: url('images/bg.png');
+  background-size: contain;
+}
+
+</style>

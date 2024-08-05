@@ -52,11 +52,12 @@ function isActive(route: ROUTE_NAME) {
 
 <style lang="scss" scoped>
 .s-TopNav {
-  @extend .dark-bg;
   z-index: 6;
   position: fixed;
   inset: 0;
   height: 4rem;
+  background-color: $secondary--bg;
+  box-shadow: 0px 0px 2rem $pure--dark;
 
   ul {
     max-width: $max-page-width;
@@ -76,15 +77,15 @@ function isActive(route: ROUTE_NAME) {
       &.main {
         text-align: start;
         h2 {
-          text-shadow: 2px 2px $color-2;
+          text-main--bg: 2px 2px $highlight;
         }
       }
 
       a {
-        color: $color-1;
+        color: $pure--white;
         font-weight: 400;
         &.active {
-          color: $color-2;
+          color: $highlight;
           font-weight: 700;
         }
       }

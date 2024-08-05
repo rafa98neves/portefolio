@@ -28,7 +28,7 @@ onMounted(() => event("open-app"));
   <div class="app">
     <TopNav v-if="!isMD" />
     <TopNavSM v-else />
-    <RouterView class="view-container" />
+    <RouterView  class="view-container"/>
   </div>
 </template>
 

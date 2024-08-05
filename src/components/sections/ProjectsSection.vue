@@ -1,21 +1,15 @@
 <script lang="ts" setup>
+import { ref } from "vue";
 import ProjectCard from "../blocks/ProjectCard.vue";
 import { PROJECTS } from "@/constants/text";
 </script>
+
 <template>
   <section>
     <div class="s-Projects padded-space">
-      <h3 class="text-center mb-10">I worked on</h3>
+      <h3 class="text-center my-10 pb-10">Check out my work</h3>
       <div class="s-Projects--wrapper">
-        <ProjectCard
-          v-for="{ title, description, file, width, redirectTo } in PROJECTS"
-          :width="width"
-          :title="title"
-          :text="description"
-          :file="file"
-          :redirect="redirectTo"
-          :alt="title"
-        />
+        <ProjectCard class="s-Projects--card" v-for="project in PROJECTS" v-bind="project" />
       </div>
     </div>
   </section>
@@ -23,22 +17,28 @@ import { PROJECTS } from "@/constants/text";
 
 <style lang="scss" scoped>
 section {
-  @extend .dark-bg;
-  background: linear-gradient(
-    180deg,
-    $color-4 0%,
-    $color-4 50%,
-    $color-11 100%
-  );
+  min-height: 0;
 
   .s-Projects {
+
     &--wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-around;
-      align-items: center;
-    }
+      column-count: 3;
+      break-before: column;
+      column-gap: 1rem;
+
+      .s-Projects--card {
+        break-inside: avoid;
+        margin-bottom: 3rem;
+      }
+
+      @include maxLG {
+        column-count: 2;
+      }
+
+      @include maxMD {
+        column-count: 1;
+      }
+    } 
   }
 }
 </style>

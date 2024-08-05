@@ -12,6 +12,7 @@ h2,
 h3,
 h4,
 h5 {
+  text-shadow: 0px 0px 3rem $highlight;
   font-family: "Crimson Text", serif;
   margin: 0;
   font-weight: 600;
@@ -44,12 +45,8 @@ b {
 }
 
 a {
-  color: $color-4;
+  color: $call--to-action;
   text-decoration: none;
-}
-
-b {
-  font-weight: 700;
 }
 
 .font-italic {
@@ -57,12 +54,11 @@ b {
 }
 
 .text-light {
-  font-weight: 300;
-  color: $color-1;
+  color: $grey;
 }
 
 .text-warning {
-  color: $color-6;
+  color: $call--to-action;
 }
 
 .font-weight-light {

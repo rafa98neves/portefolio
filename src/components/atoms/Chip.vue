@@ -17,12 +17,13 @@ withDefaults(defineProps<{ label: string; dark?: boolean }>(), { dark: true });
   border-radius: 14px;
   text-align: center;
   padding: 0.25rem 0.75rem;
-  color: $color-8;
-  box-shadow: 0px 0px 6px 1px $color-10;
-  background-color: $color-5;
-  border: 1px solid $color-5;
+  color: $grey;
+  box-shadow: 0px 0px 6px 1px $pure--dark;
+  background-color: $secondary--bg;
+  border: 1px solid $highlight;
+
   &.dark {
-    color: $color-8;
+    color: $grey;
   }
 }
 </style>

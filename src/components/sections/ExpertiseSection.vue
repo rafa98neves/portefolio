@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 import Card from "../atoms/Card.vue";
-import GeoFigure from "../atoms/GeoFigure.vue";
 </script>
+
 <template>
   <section>
     <div class="s-Expertise padded-space">
-      <GeoFigure pos="bottom-left" color="light" />
       <h3 class="text-center mb-4">About me</h3>
       <div class="s-Expertise--description">
         <div class="mb-2">
@@ -64,9 +63,9 @@ import GeoFigure from "../atoms/GeoFigure.vue";
 
 <style lang="scss" scoped>
 section {
-  min-height: 50rem;
-  @extend .light-bg;
+  min-height: 0;
 }
+
 .s-Expertise {
   display: flex;
   flex-direction: column;

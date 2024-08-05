@@ -1,9 +1,3 @@
-<script lang="ts" setup>
-function goToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-</script>
-
 <template>
   <section>
     <div class="s-Contacts padded-space">
@@ -13,7 +7,7 @@ function goToTop() {
         into an exceptional
         <span class="font-weight-bold text-warning"> product</span>?
       </div>
-      <div class="s-Contacts--contactsWrapper my-10">
+      <div class="s-Contacts--contactsWrapper my-5">
         <div class="contact">
           <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
           <div>
@@ -36,23 +30,15 @@ function goToTop() {
           </div>
         </div>
       </div>
-      <button class="btn-warning" @click="goToTop">
-        <div class="s-Contacts--btnContent">
-          Go to top
-          <font-awesome-icon class="ml-2" icon="arrow-up" />
-        </div>
-      </button>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 section {
-  @extend .darker-bg;
   min-height: auto;
   height: auto;
   overflow: hidden;
-  padding: 2rem 1rem;
 
   .s-Contacts {
     z-index: 3;
@@ -87,7 +73,7 @@ section {
       b {
         text-align: center;
         display: block;
-        color: $color-2;
+        color: $highlight;
         margin-bottom: 0.25rem;
         @include maxLG {
           text-align: start;
@@ -97,7 +83,7 @@ section {
 
     .icon {
       margin-right: 1rem;
-      color: $color-2;
+      color: $highlight;
     }
 
     &--btnContent {

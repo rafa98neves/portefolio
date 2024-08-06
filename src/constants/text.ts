@@ -105,7 +105,7 @@ export const PROJECTS = [
     redirect: "https://www.alt21.com/x-hedge/",
   },
   {
-    title: "Portefolio",
+    title: "Portfolio",
     text: `My portfolio not only offers insights into who I am but also serves as a showcase of my coding skills.
       Feel free to explore my GitHub repository to delve into my coding projects and methodologies.`,
     file: "portefolio.png",
@@ -118,6 +118,13 @@ export const PROJECTS = [
       and intuitive platform for handling multiple events. (Currently undergoing maintenance)`,
     file: "salaz.jpeg",
     redirect: "https://www.grama.io/work/sala-z.html",
+  },
+  {
+    title: "Unravel",
+    text: `Unravel is a personal project that allows users to manage and view their own service Catalog in a futuristic way.`,
+    file: "unravel.png",
+    redirect: "https://unravel-a3818.web.app/",
+    code: "https://github.com/rafa98neves/unravel",
   },
   {
     title: "Plug Events",

@@ -11,7 +11,7 @@ const { isMD } = useViewport();
 
 useHead({
   // Can be static or computed
-  title: "Rafael Neves | Portefolio",
+  title: "Rafael Neves | Portfolio",
   meta: [
     {
       name: "description",

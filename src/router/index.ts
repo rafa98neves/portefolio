@@ -17,7 +17,7 @@ const router = createRouter({
         {
           path: "",
           name: ROUTE_NAME.ABOUT_ME,
-          meta: { title: "Portefolio" },
+          meta: { title: "Portfolio" },
           component: HomeView,
         },
         {

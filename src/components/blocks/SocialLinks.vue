@@ -40,7 +40,6 @@ const commonAnimationBind = (delay = 100) => {
       @click="open('https://www.linkedin.com/in/neves98rafael/')"
       v-motion
       v-bind="commonAnimationBind(200)"
-      style="top: 42%"
       :icon="['fab', 'linkedin']"
     />
 
@@ -49,7 +48,6 @@ const commonAnimationBind = (delay = 100) => {
       @click="open('https://github.com/rafa98neves')"
       v-motio
       v-bind="commonAnimationBind(550)"
-      style="top: 50%"
       :icon="['fab', 'github']"
     />
 
@@ -58,7 +56,6 @@ const commonAnimationBind = (delay = 100) => {
       @click="open('mailto:neves98rafael@gmail.com')"
       v-motion
       v-bind="commonAnimationBind(0)"
-      style="top: 58%"
       :icon="['fas', 'envelope']"
     />
   </div>
@@ -67,6 +64,7 @@ const commonAnimationBind = (delay = 100) => {
 <style lang="scss" scoped>
 .c-SocialLinks {
   z-index: 4;
+  height: 30%;
 
   &--icon {
     display: block;
@@ -79,16 +77,7 @@ const commonAnimationBind = (delay = 100) => {
   &:not(.horizontal) {
     position: fixed;
     right: 2.5rem;
-    height: 30vh;
     display: grid;
-
-    &:hover {
-      right: 2.2rem;
-      font-size: 2rem;
-      :deep(path) {
-        fill: black;
-      }
-    }
   }
 
   &.horizontal {
@@ -101,17 +90,16 @@ const commonAnimationBind = (delay = 100) => {
 
     .c-SocialLinks--icon {
       display: inline-flex;
-      color: $highlight;
+      color: $pure--white;
       position: relative;
-
-      &:hover {
-        right: 0;
-        font-size: 1.8rem;
-        :deep(path) {
-          fill: black;
-        }
-      }
     }
+  }
+}
+
+.c-SocialLinks--icon:hover {
+  transform: scale(1.2) !important;
+  :deep(path) {
+    fill: $highlight;
   }
 }
 </style>

@@ -57,7 +57,7 @@ const commonBinds = computed(() => ({
   color: $pure--white;
   align-items: center;
   justify-content: space-between;
-  width: 120%;
+  width: 120%; 
 
   img {
     width: min(100%, 12rem);
@@ -68,19 +68,21 @@ const commonBinds = computed(() => ({
   }
 
   &--text {
+    text-shadow: 0px 0px 4rem $pure--dark;
     text-align: left;
     width: min(100%, 46rem);
     padding: 2rem;
     margin-right: auto;
+    color: $grey;
   }
 
   &.left {
-    margin-left: 15%;
+    margin-left: min(20rem, 2%);
   }
 
   &.right {
-    margin-left: -33%;
-
+    margin-left: -15%;
+    
     img {
       order: 2;
     }
@@ -92,12 +94,13 @@ const commonBinds = computed(() => ({
     }
   }
 
-  @include maxMD {
+  @include maxLG {
     width: 100%;
     border-radius: 0 !important;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
     img {
       width: min(100%, 6rem);
       margin: 0;
@@ -112,6 +115,6 @@ const commonBinds = computed(() => ({
 }
 
 ::v-deep(h3) {
-  @extend .shadowless;
+  text-shadow: 0px 0px 4rem $pure--dark;
 }
 </style>

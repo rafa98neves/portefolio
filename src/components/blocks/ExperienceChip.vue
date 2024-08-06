@@ -47,7 +47,6 @@ const experienceYears = computed(() => new Date().getFullYear() - 2020);
 
     b {
       font-size: 1.2rem;
-      font-weight: 700;
       display: block;
     }
 

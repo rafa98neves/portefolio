@@ -100,7 +100,6 @@ section {
 
   :deep(a) {
     color: $pure--white;
-    font-weight: 600;
   }
 
   .s-Academic {

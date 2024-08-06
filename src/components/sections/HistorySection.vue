@@ -102,14 +102,12 @@ section {
 
   :deep(a) {
     color: $pure--white;
-    font-weight: 600;
   }
 
   .s-History--chipContainer {
     display: inline-block;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
-    font-weight: 600;
   }
 
   .s-History--text-header {

@@ -112,6 +112,7 @@ function isActive(route: ROUTE_NAME) {
         a {
           color: $pure--white;
           font-weight: 400;
+          
           &.active {
             color: $highlight;
             font-weight: 700;

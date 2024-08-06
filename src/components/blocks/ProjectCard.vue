@@ -29,10 +29,10 @@ function redirectUser(redirect?: string) {
     @click="redirectUser(redirect)"
   >
     <div class="c-ProjectCard--text-wrapper">
-      <h4 class="text-uppercase shadowless">{{ title }}</h4>
-      <div class="c-ProjectCard--text text-light my-4">
+      <h5 class="text-uppercase shadowless">{{ title }}</h5>
+      <div class="c-ProjectCard--text text-light my-2">
         {{ text }}
-        <button class="mt-4" @click.stop.prevent="redirectUser(code)" v-if="code">
+        <button class="mt-8" @click.stop.prevent="redirectUser(code)" v-if="code">
           Check out the code
         </button>
       </div>
@@ -56,11 +56,19 @@ function redirectUser(redirect?: string) {
     @extend .text-center;
     position: relative;
     display: grid;
+
+    h5 {
+      letter-spacing: 6px;
+    }
   }
 
   &:hover {
-    transform: scale(1.06) !important;
+    transform: scale(1.1) !important;
     z-index: 3;
+
+    .c-ProjectCard--text {
+      color: $pure--white;
+    }
   }
 
   &--image {
@@ -72,7 +80,8 @@ function redirectUser(redirect?: string) {
     img {
       border-radius: 2rem;
       max-height: 16rem;
-      max-width: 100%;
+      max-width: 70%;
+      margin-bottom: 2rem;
     }
 
     &.full {
@@ -84,15 +93,19 @@ function redirectUser(redirect?: string) {
         border-top-right-radius: 0;
         border-top-left-radius: 0;
         width: 100%;
+        max-width: 100%;
+        border: 1px solid $grey;
+        border-top: none;
       }
     }
   }
 
   &--text {
+    font-weight: 300;
     flex-direction: column;
     @extend .text-center;
     align-items: center;
-    padding: 0 2rem;
+    padding: 2rem 4rem;
     display: flex;
     z-index: 3;
   }

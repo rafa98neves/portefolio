@@ -16,11 +16,11 @@ const props = withDefaults(
   }
 );
 
-const { isMD } = useViewport();
+const { isLG } = useViewport();
 
-const isRight = computed(() => props.placement === "right" && !isMD.value);
+const isRight = computed(() => props.placement === "right" && !isLG.value);
 
-const isLeft = computed(() => props.placement !== "right" && !isMD.value);
+const isLeft = computed(() => props.placement !== "right" && !isLG.value);
 
 const commonBinds = computed(() => ({
   class: ["c-HistoryCard", { right: isRight.value, left: isLeft.value }],
@@ -62,13 +62,12 @@ const commonBinds = computed(() => ({
   img {
     width: min(100%, 12rem);
     aspect-ratio: 1 / 1;
-    object-fit: scale-down;
+    object-fit: cover;
     margin: 1rem;
     border-radius: 50%;
   }
 
   &--text {
-    text-shadow: 0px 0px 4rem $pure--dark;
     text-align: left;
     width: min(100%, 46rem);
     padding: 2rem;
@@ -94,15 +93,15 @@ const commonBinds = computed(() => ({
     }
   }
 
-  @include maxLG {
+  @include maxXL {
     width: 100%;
-    border-radius: 0 !important;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     
     img {
-      width: min(100%, 6rem);
+      width: 6rem;
       margin: 0;
       order: 0 !important;
     }
@@ -110,8 +109,14 @@ const commonBinds = computed(() => ({
     &--text {
       padding: 2 0.5rem;
       text-align: center;
+      margin-right: 0;
     }
   }
+
+  @include maxMD {
+    flex-direction: row;
+  }
+
 }
 
 ::v-deep(h3) {

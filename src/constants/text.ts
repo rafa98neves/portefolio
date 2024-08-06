@@ -105,7 +105,7 @@ export const PROJECTS = [
     redirect: "https://www.alt21.com/x-hedge/",
   },
   {
-    title: "My Portefolio",
+    title: "Portefolio",
     text: `My portfolio not only offers insights into who I am but also serves as a showcase of my coding skills.
       Feel free to explore my GitHub repository to delve into my coding projects and methodologies.`,
     file: "portefolio.png",

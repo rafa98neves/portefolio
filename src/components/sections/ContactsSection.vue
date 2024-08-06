@@ -1,13 +1,21 @@
+<script lang="ts" setup>
+import { useViewport } from "@/composables/layout";
+import Card from "../atoms/Card.vue";
+
+const { isXL } = useViewport();
+</script>
+
 <template>
   <section>
     <div class="s-Contacts padded-space">
-      <div class="font-weight-bold text-center">
+      <Card class="font-weight-bold text-center" :no-background="!isXL">
         Are you prepared to turn your extraordinary
         <span class="font-weight-bold text-warning"> idea </span>
         into an exceptional
         <span class="font-weight-bold text-warning"> product</span>?
-      </div>
-      <div class="s-Contacts--contactsWrapper my-5">
+      </Card>
+
+      <Card class="s-Contacts--contactsWrapper my-5" :no-background="!isXL">
         <div class="contact">
           <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
           <div>
@@ -29,7 +37,7 @@
             Coimbra, Portugal
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   </section>
 </template>

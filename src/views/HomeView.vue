@@ -98,7 +98,7 @@ setTimeout(() => key.value++);
     <div class="v-Home--bg" />
     <GreetingSection ref="greetingSection" />
     <ExpertiseSection class="pt-10 pb-5" />
-    <HistorySection ref="historySection" />
+    <HistorySection class="v-Home--history" ref="historySection" />
     <AcademicSection ref="academicSection" />
     <ProjectsSection ref="projectsSection" />
     <ContactsSection class="py-10" />
@@ -114,6 +114,12 @@ setTimeout(() => key.value++);
 
   @include maxMD {
     background-size: contain;
+  }
+
+  @include minXL {
+    &--history{
+      margin-bottom: 25rem;
+    }
   }
 }
 </style>

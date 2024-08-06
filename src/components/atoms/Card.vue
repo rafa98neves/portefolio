@@ -3,6 +3,7 @@ const props = defineProps<{
   title?: string;
   icons?: string[];
   clickable?: boolean;
+  noBackground?: boolean;
 }>();
 
 const emits = defineEmits(["click"]);
@@ -15,7 +16,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <div class="c-Card" v-motion-fade-visible :delay="400" @click="onClick">
+  <div class="c-Card" :class="{ 'no-bg': noBackground }" v-motion-fade-visible :delay="400" @click="onClick">
     <font-awesome-icon
       v-for="(icon, index) in icons"
       :icon="icon"
@@ -43,7 +44,14 @@ const onClick = () => {
   border-radius: 1rem;
   background-color: $secondary--bg;
   box-shadow: 0px 0px 2rem $pure--dark;
+  border: 1px solid $grey;
   padding: 1rem 1rem 2rem 1rem;
+
+  &.no-bg {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
 
   &--icon {
     position: absolute;
@@ -72,6 +80,7 @@ const onClick = () => {
     align-items: center;
     justify-content: center;
   }
+  
   &--content {
     margin-top: 1rem;
   }

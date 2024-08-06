@@ -6,9 +6,9 @@ import { HISTORY_TEXT } from "@/constants/text";
 <template>
   <section>
     <div class="s-History padded-space">
-      <h3 class="text-center mb-2">My Career</h3>
+      <h3 class="text-center mb-4">My Career</h3>
       <HistoryCard
-        class="my-4"
+        class="my-10"
         image="/images/unbabel.png"
         background-color="rgba(56, 67, 208, 1)"
         alt="Unbabel Logo"
@@ -35,7 +35,7 @@ import { HISTORY_TEXT } from "@/constants/text";
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-4"
+        class="my-10"
         image="/images/grama.jpeg"
         background-color="rgba(0, 0, 0, 1)"
         placement="left"
@@ -65,7 +65,7 @@ import { HISTORY_TEXT } from "@/constants/text";
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-4"
+        class="my-10"
         image="/images/plug.png"
         background-color="rgb(92, 105, 230, 1)"
         alt="Plug Events Logo"

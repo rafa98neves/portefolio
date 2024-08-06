@@ -96,7 +96,6 @@ export const PROJECTS = [
     file: "unbabel-2.png",
     redirect:
       "https://unbabel.com/sv/introducing-the-unbabel-portal-a-new-way-to-manage-customer-service-language-operations/",
-    full: true,
   },
   {
     title: "X-Hedge",
@@ -112,7 +111,6 @@ export const PROJECTS = [
     file: "portefolio.png",
     redirect: "https://rafa98neves.github.io/#/",
     code: "https://github.com/rafa98neves/portefolio",
-    full: true,
   },
   {
     title: "Sala-Z",
@@ -120,7 +118,6 @@ export const PROJECTS = [
       and intuitive platform for handling multiple events. (Currently undergoing maintenance)`,
     file: "salaz.jpeg",
     redirect: "https://www.grama.io/work/sala-z.html",
-    full: true,
   },
   {
     title: "Plug Events",
@@ -128,5 +125,6 @@ export const PROJECTS = [
       while fostering seamless connections within the artistic community.`,
     file: "plug-events.png",
     redirect: "https://www.plug.events/space/_/_/events",
+    small: true,
   },
 ];

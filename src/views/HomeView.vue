@@ -101,7 +101,7 @@ setTimeout(() => key.value++);
     <HistorySection ref="historySection" />
     <AcademicSection ref="academicSection" />
     <ProjectsSection ref="projectsSection" />
-    <ContactsSection class="pt-14 pb-10" />
+    <ContactsSection class="py-10" />
   </div>
 </template>
 
@@ -109,8 +109,11 @@ setTimeout(() => key.value++);
 <style lang="scss" scoped>
 .v-Home {
   position: relative;
-  background-image: url('images/bg.png');
-  background-size: contain;
-}
+  background-image: url('/images/bg.png');
+  background-size: cover;
 
+  @include maxMD {
+    background-size: contain;
+  }
+}
 </style>

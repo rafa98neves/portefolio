@@ -57,7 +57,6 @@ const commonBinds = computed(() => ({
   color: $pure--white;
   align-items: center;
   justify-content: space-between;
-  min-height: 20rem;
   width: 120%;
 
   img {
@@ -76,15 +75,11 @@ const commonBinds = computed(() => ({
   }
 
   &.left {
-    margin-right: -20%;
-    border-top-left-radius: 8rem;
-    border-bottom-left-radius: 8rem;
+    margin-left: 15%;
   }
 
   &.right {
-    margin-left: -20%;
-    border-top-right-radius: 8rem;
-    border-bottom-right-radius: 8rem;
+    margin-left: -33%;
 
     img {
       order: 2;

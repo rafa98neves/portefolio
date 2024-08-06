@@ -7,9 +7,9 @@ import { ACADEMIC_TEXT } from "@/constants/text";
 <template>
   <section>
     <div class="s-Academic padded-space">
-      <h3 class="text-center">My Accomplishments</h3>
+      <h3 class="text-center mb-6">My Accomplishments</h3>
       <HistoryCard
-        class="my-2"
+        class="my-4"
         image="/images/uc.webp"
         background-color="rgba(255, 255, 255, 0.9)"
         placement="left"
@@ -34,7 +34,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
         </div>
       </HistoryCard>
       <HistoryCard
-        class="my-2"
+        class="my-4"
         image="/images/fctuc.png"
         background-color="rgba(255, 255, 255, 0.9)"
         alt="FCTUC Logo"
@@ -59,7 +59,7 @@ import { ACADEMIC_TEXT } from "@/constants/text";
       </HistoryCard>
 
       <HistoryCard
-        class="mt-10"
+        class="my-4"
         image="/images/music.jpeg"
         background-color="rgba(161,105,54,255)"
         placement="left"

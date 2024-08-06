@@ -7,8 +7,8 @@ defineProps<{
   file: string;
 
   code?: string;
+  small?: boolean;
   redirect?: string;
-  full?: boolean;
   imgStyle?: string;
 }>();
 
@@ -38,7 +38,7 @@ function redirectUser(redirect?: string) {
       </div>
     </div>
 
-    <div class="c-ProjectCard--image" :class="{ full }">
+    <div class="c-ProjectCard--image" :class="{ full: !small }">
       <img :src="`/images/${file}`" :style="imgStyle" />
     </div>
   </Card>
@@ -83,7 +83,7 @@ function redirectUser(redirect?: string) {
         border-bottom-left-radius: 1rem;
         border-top-right-radius: 0;
         border-top-left-radius: 0;
-        max-height: 16rem;
+        width: 100%;
       }
     }
   }

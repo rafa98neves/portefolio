@@ -43,10 +43,10 @@ section {
     h1 {
       font-size: 4rem;
     }
-  }
 
-  &--text {
-    margin-left: 10%;
+    &--text {
+      margin-left: 10%;
+    }
   }
 
   &--subtitle {

@@ -24,10 +24,10 @@ const { isXL } = useViewport();
           </div>
         </div>
         <div class="contact">
-          <font-awesome-icon :icon="['fas', 'phone']" class="icon" />
+          <font-awesome-icon :icon="['fa-brands', 'fa-linkedin']" class="icon" />
           <div>
-            <b> Phonenumber </b>
-            +351 969 884 851
+            <b> LinkedIn </b>
+            in/neves98rafael
           </div>
         </div>
         <div class="contact">

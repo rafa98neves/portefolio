@@ -105,11 +105,10 @@ setTimeout(() => key.value++);
   </div>
 </template>
 
-
 <style lang="scss" scoped>
 .v-Home {
   position: relative;
-  background-image: url('/images/bg.png');
+  background-image: url("/images/bg.jpg");
   background-size: cover;
 
   @include maxMD {
@@ -117,7 +116,7 @@ setTimeout(() => key.value++);
   }
 
   @include minXL {
-    &--history{
+    &--history {
       margin-bottom: 25rem;
     }
   }

@@ -29,7 +29,7 @@ function isActive(route: ROUTE_NAME) {
 </script>
 
 <template>
-  <div class="s-TopNav" ref="nav">
+  <div class="s-TopNav" :class="{ open: menuOpen }" ref="nav">
     <div class="padded-space">
       <div class="menu-wrapper">
         <RouterLink to="/" @click="close">
@@ -81,7 +81,12 @@ function isActive(route: ROUTE_NAME) {
   position: fixed;
   inset: 0;
   height: 4rem;
-  background-color: $secondary--bg;
+  background-color: #141b29a7;
+  transition: background-color 300ms ease;
+
+  &.open {
+    background-color: $secondary--bg;
+  }
 
   .menu-wrapper {
     height: 100%;
@@ -112,7 +117,7 @@ function isActive(route: ROUTE_NAME) {
         a {
           color: $pure--white;
           font-weight: 400;
-          
+
           &.active {
             color: $highlight;
             font-weight: 700;

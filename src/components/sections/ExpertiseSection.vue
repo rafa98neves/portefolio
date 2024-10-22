@@ -9,7 +9,7 @@ import Card from "../atoms/Card.vue";
       <div class="s-Expertise--description">
         <div class="mb-2">
           I am a {{ new Date().getFullYear() - 1998 }}-year-old
-          <b>Frontend Developer</b> driven by a passion for crafting
+          <b>Senior Frontend Developer</b> driven by a passion for crafting
           <b>high-quality</b>, <b>reliable</b>, and <b>scalable</b> code.
         </div>
         <div>

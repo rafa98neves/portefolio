@@ -56,7 +56,7 @@ function isActive(route: ROUTE_NAME) {
   position: fixed;
   inset: 0;
   height: 4rem;
-  background-color: $secondary--bg;
+  background-color: #141b29a7;
   box-shadow: 0px 0px 2rem $pure--dark;
 
   ul {
@@ -76,15 +76,12 @@ function isActive(route: ROUTE_NAME) {
 
       &.main {
         text-align: start;
-        h2 {
-          text-main--bg: 2px 2px $highlight;
-        }
       }
 
       a {
         color: $pure--white;
         font-weight: 400;
-        
+
         &.active {
           color: $highlight;
           font-weight: 700;
